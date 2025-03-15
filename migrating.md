@@ -1,29 +1,68 @@
 # migrating out of JB1
 
-i.e. to JB2 or astro/starlight
+i.e. to JB2 or astro/starlight and/or codehike
+
+## currently pending at mystmd
+
+### ipywidgets
+
+everything `ipywidgets` seems to be doomed ?  
+was a bit the same with jb1, although not that serious  
+this is a problem for
+
+- [ ] nbautoeval (won't work in a static site anyway, unless re-written to use browser-embedded python)
+- [ ] interactive visualizations (this being said it was already not working under jb1)
+
+### static stuff
+
+things in `_static` don't get found ?  
+this is a problem for - at least - embedded HTML pages like folium-generated maps; see
+
+- [ ] [https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113](https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113)
+- [ ] and/or [https://github.com/jupyter-book/mystmd/issues/1921](https://github.com/jupyter-book/mystmd/issues/1921)
+
+### external urls in TOC
+
+```
+⚠️  myst.yml URLs in table of contents are not yet supported:
+https://flotpython-exos-ds.readthedocs.io/en/main/ds-tps/images/README-images1-nb.html
+```
+
+### slug-ed URLs
+
+really don't like this new trend of botching filenames into slugs;
+
+https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2726427697
+
+https://github.com/jupyter-book/mystmd/issues/670#issuecomment-2726442232
 
 ## tooling
 
-- [ ] Tweak nbnorm to
-      - [ ] Put title first
-      - [ ] Move license last
-- [ ] Transform jlab-examples
-- [ ] Transform flotpython-slides
+- [x] Transform jlab-examples
+- [x] Transform flotpython-slides
 
 ## what we have now
 
-| course | JB1 | JB2 | astro |
-|--------|-----|-----|-------|
-| intro  | <https://ue12-p24-intro.rtfd.io> | <https://ue12-p24.github.io/intro> | <https://ue12-p25.github.io/intro>
-| numerique | <https://ue12-p24-numerique.rtfd.io> | <https://ue12-p25.github.io/numerique> | n/a
-| jupyterlab-examples | <https://flotpython-jupyterlab-examples.rtfdio>
+| course | orga | now | target | comment | URL |
+|:------:|:----:|:---:|:------:|:-------:|:---:|
+| jupyterlab-examples | flotpython | jb2 | | **DONE** | https://flotpython.github.io/jupyterlab-examples |
+| intro | ue12-p25 | astro |  | **DONE** | https://ue12-p25.github.io/intro |
+| numerique | ue12-p25 | jb2 | | **DONE** | https://ue12-p25.github.io/numerique |
+| git | ue12-p25 | was jb1 | astro? | not-started | ... |
+| slides | flotpython | jb2 | | **DONE** | https://flotpython.github.io/slides |
+| exos-python | flotpython | jb1 | jb2 ? | check for limitations | https://flotpython.github.io/exos-python |
+| exos-ds | flotpython | jb1 | jb2 ? | check for limitations | https://flotpython.github.io/exos-ds |
+| web (rename as frontend) | ue22-p25 | was jb1 | astro? | not-started| ... |
+| backend | ue22-p25 | was remarkjs | astro? | not-started| ... |
+| backend-flask-chatapp | ue22-p25 | was codehike | same | not-started| ... |
+| backend-fastapi-notes | ue22-p25 | just Python for now | codehike | not-started| ... |
 
 ## JB1
 
 ## pros
 
 - [ ] all supports were using this as of p24
-- [ ] easy recipe to publish on readthedocs
+- [ ] easy recipe to publish on readthedocs; which supports several branches simultaneously
 
 ### cons
 
@@ -35,22 +74,18 @@ i.e. to JB2 or astro/starlight
 
 ### pros
 
-- [ ] execute codes in notebooks
-- [ ] see also the doc in <https://mystmd.org/guide/directives>
+- modern, and supported, alternative to jb1
+- execute codes in notebooks
+- fast DX
+- see also the doc in <https://mystmd.org/guide/directives>
 
 ### cons
 
+- must publish on github pages for now, and so no multiple branches at the same time
+
 #### convenience / painful points
 
-- [ ] misses the cheat shortcut to get corrections
-- [ ] what with the `_static` thingy ?  
-      see e.g. addresses-final.html in numerique/ which does not show up in the pages website
-      it is referred to from an `iframe` directive with `_static/addresses-final.html`
-- [ ] ipywidgets: a Jupyter kernel connection is required to fully display this output  
-      ![alt text](migrating-ipywidgets.png)  
-      also needed for
-      - [ ] ipythontutor
-      - [ ] nbautoeval
+- [ ] still misses the cheat shortcut to get corrections
 
 #### styling
 
@@ -61,10 +96,6 @@ i.e. to JB2 or astro/starlight
 - [ ] pandas dataframes
   - [ ] are not centered; not exactly serious either
   - [ ] hovering used to outline the whole row, now just the first cell in the row
-- [ ] add external urls in TOC
-      ```
-      ⚠️  myst.yml URLs in table of contents are not yet supported: https://flotpython-exos-ds.readthedocs.io/en/main/ds-tps/images/README-images1-nb.html
-      ```
 
 #### second order
 
