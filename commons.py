@@ -29,7 +29,7 @@ def commons_cli():
     # pass
 
 PROJECT_PATTERNS = [
-    "ue12-p25-intro-astro",
+    "ue12-p25-intro",
     "ue12-p25-numerique",
     "flotpython-exos-ds",
     "ue12-p24-git",
@@ -44,11 +44,14 @@ PROJECT_PATTERNS = [
 COMMONS = [
     # we search at depths 1 and 2, more leads to too long searching times
     'Makefile.book',
+    'Makefile.book2',
+    'Makefile.style',
+    'Makefile.style2',
+    'style_common.css',
+    'style_jb2.css',
     'Makefile.prune',
     'Makefile.toc',
     'Makefile.norm',
-    'Makefile.style',
-    'style_common.css',
     'jupytext.toml',
     '.readthedocs.yaml',
     'my-book.js',
