@@ -1,8 +1,7 @@
 
-include Makefile.book
+include Makefile.book2
+include Makefile.style2
 include Makefile.prune
-include Makefile.style
-include Makefile.toc
-NOTEBOOKS := $(wildcard [0-9]*.md) $(wildcard [0-9]*.py)
-NBNORMFLAGS = -l1 -L Licence -s2 -S _static/style
+NOTEBOOKS := $(wildcard [0-9]*.md)
+NBNORMFLAGS = -t 1 -L Licence --license-delete -S _static/style --style-delete
 include Makefile.norm
