@@ -100,11 +100,11 @@ apparently this is **hopeless with jlab**; works fine in jb2 though..
 
 ### partial
 
-same between `prune` (inclusive) and `toc` (exclusive)
+same between `style` (inclusive) and `wildcard` (exclusive)
 
 ```{literalinclude} Makefile
-:start-at: prune
-:end-before: toc
+:start-at: style
+:end-before: wildcard
 ```
 
 ```{list-table}
@@ -133,6 +133,21 @@ same between `prune` (inclusive) and `toc` (exclusive)
 ```{literalinclude} Makefile
 :filename: my-fake-name
 
+```
+
++++
+
+### emphasis lines
+
+do not put spaces in the line list
+```markdown
+:linenos: true
+:emphasize-lines: 2,4,6
+```
+
+```{literalinclude} Makefile
+:linenos: true
+:emphasize-lines: 2,4,6
 ```
 
 +++
