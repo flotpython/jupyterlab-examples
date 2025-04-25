@@ -21,6 +21,7 @@ project:
       children:
         - file: 5-01-toc-plain.md
           title: a title set in the toc
+          weirdo: should trigger some error
         - file: 5-02-dummy-prune-nb.md
           title: using nbprune
         # here we could use the ability to get rid of the umbrella
