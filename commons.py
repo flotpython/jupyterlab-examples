@@ -54,7 +54,9 @@ COMMONS = [
     'Makefile.norm',
     'jupytext.toml',
     '.readthedocs.yaml',
+    'myst-to-pages.yml',
     'my-book.js',
+    'my-book2.js',
     # no longer useful with this file as we focus on a specific set of projects
     # plus, this is changing with pyproject.toml
     # 'Makefile.pypi',
