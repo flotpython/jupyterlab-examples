@@ -41,6 +41,13 @@ y = np.sin(x)
 plt.plot(x, y)
 ```
 
+while we're at it, let's see a cell with no output
+
+```{code-cell} ipython3
+# this is a code cell
+# and it does not yield any output
+```
+
 ## code blocks
 
 we can have `inline code` in the text that go on, or
