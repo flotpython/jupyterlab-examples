@@ -186,8 +186,8 @@ p>code {
                 [body-inset-start] minmax(8ch, 10ch)
                 [middle-start] minmax(8ch, 10ch)
                 [gutter-left-end] minmax(8ch, 10ch)
-                /* this is the one we increase */
-                minmax(20ch, 40ch)
+                /* this is the one we increase from minmax(8ch, 10ch)*/
+                10fr
                 [gutter-right-start] minmax(8ch, 10ch)
                 [middle-end] minmax(8ch, 10ch)
                 [body-inset-end] 1rem
@@ -198,19 +198,23 @@ p>code {
                 [screen-inset-end] .5rem
                 [screen-end] !important;
         }
-        /*
-        the left hand side toc has this in a min-width: 1280px media clause
-        .xl\:col-margin-left {
-            grid-column: page / body-start;
     }
-}
-    */
 }
 
-/* @media (min-width: 960px) {
-    .bd-page-width {
-        max-width: initial !important;
+/* here's the settings for the medium size screens 
+ * it's hard to do much better,
+ * ideally the right had side toc could take a little less space
+*/
+/* @media (min-width: 1024px) and (max-width: 1535px) {
+    html {
+        .article-grid, .xl\:article-grid {
+            grid-template-columns:
+            [screen-start] .25rem [screen-inset-start page-start] 1rem [page-inset-start body-outset-start] 1fr [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch,10ch) [middle-start] minmax(8ch,10ch) [gutter-left-end] minmax(8ch,10ch) minmax(8ch,10ch) [gutter-right-start] minmax(8ch,10ch) [middle-end] minmax(8ch,10ch) [body-inset-end] 1rem [body-end gutter-right-end] 3rem [body-outset-end] minmax(5rem,13rem) [page-inset-end] 3rem [page-end] 1fr [screen-inset-end] .25rem [screen-end]
+        }
     }
+} */
+
+
 
 >>/* but keep the upper-left logo to grow too much */
 /* .navbar-brand.logo>img {
