@@ -70,6 +70,8 @@ https://github.com/jupyter-book/mystmd/issues/670#issuecomment-2726442232
 - [ ] runs on sphinx, sloowww
 - [ ] can **only** publish on readthedocs ? (probably doable on github pages too but we have no experience of that as of yet)
 
+---
+
 ## JB2
 
 ### pros
@@ -83,25 +85,29 @@ https://github.com/jupyter-book/mystmd/issues/670#issuecomment-2726442232
 
 - must publish on github pages for now, and so no multiple branches at the same time
 
-#### convenience / painful points
+### pain points / todo list
 
 - [ ] still misses the cheat shortcut to get corrections
-
-#### styling
-
-- [ ] outline output cells
-- [ ] outline input cells (blue is like untyped admonitions...)
-- [ ] outline inline code
+  - [ ] need to find a way to embed a piece of JS
+  - [ ] the corriges do not seem to be evaluated like they were under sphinx/jb1
+  - [ ] put it all together; may have an impact on styling...
 - [ ] favicons on the published end ? <https://ue12-p25.github.io/numerique/> has none but the local one is fine
-- [ ] pandas dataframes
-  - [ ] are not centered; not exactly serious either
-  - [ ] hovering used to outline the whole row, now just the first cell in the row
+
+- [ ] styling
+  - [x] lists
+  - [ ] cells
+    - [ ] outline output cells
+    - [ ] outline input cells (blue is like untyped admonitions...)
+  - [ ] outline inline code
+  - [ ] pandas dataframes
+    - [ ] are not centered; not exactly serious either
+    - [ ] hovering used to outline the whole row, now just the first cell in the row
 
 #### second order
 
 - [ ] not sure about the slug thing; can we override the default function ?
 - [ ] would be nice to be able to rename `myst.yml` into `_myst.yml`
-- [ ] inline images ?
+- [ ] inline images ? right now they cause a new paragraph to be created
 - [ ] jupyterlite embeddings not working at all
 
 #### fixed
@@ -110,6 +116,8 @@ https://github.com/jupyter-book/mystmd/issues/670#issuecomment-2726442232
   http://localhost:3000/numpy-tp-dices-advanced-nb#version-pour-les-d-butants
   rendered oddly (but better than jb1 for that matter)  
   fixed by adding an extra {equation} environment around it
+
+---
 
 ## astro / starlight
 
