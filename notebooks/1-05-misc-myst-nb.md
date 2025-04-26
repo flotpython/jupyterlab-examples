@@ -16,8 +16,6 @@ nbhosting:
   title: miscell MyST
 ---
 
-+++ {"tags": []}
-
 # miscell MyST
 
 +++
@@ -67,10 +65,10 @@ it renders: {strike}`so that one can see text in strikethrough mode`
 **NOTE** for striking `a piece of text`, we can use
 
 ```markdown
-```{del}`` `a piece of text` ``
+{del}`` `a piece of text` ``
 ```
 
-which renders as ```{del}`` `a piece of text` ``
+which renders as {del}`` `a piece of text` ``
 
 not quite sure about the `del` *vs* `strike` thing though
 
