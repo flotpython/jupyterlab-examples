@@ -26,7 +26,7 @@ we're testing **jupyterlab**, together with  the rendering under **jupyter-book 
 
 ## published on github.io
 
-[![the badge](https://github.com/flotpython/jupyterlab-examples/actions/workflows/github-pages.yml/badge.svg) on https://flotpython.github.io/jupyterlab-examples](https://flotpython.github.io/jupyterlab-examples)
+[![the badge](https://github.com/flotpython/jupyterlab-examples/actions/workflows/myst-to-pages.yml/badge.svg) on https://flotpython.github.io/jupyterlab-examples](https://flotpython.github.io/jupyterlab-examples)
 
 ## formerly on readthedocs.io
 
