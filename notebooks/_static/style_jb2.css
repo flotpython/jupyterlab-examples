@@ -159,15 +159,36 @@ p>code {
 
 /* ---------- use page width more effectively */
 @media (min-width: 1536px) {
-    html .article-grid {
-        grid-template-columns:
-         /* [screen-start] .5rem [screen-inset-start] 1fr [page-start] 3rem [page-inset-start] minmax(4rem, 9rem) [body-outset-start] 3rem [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 10ch) [middle-start] minmax(8ch, 10ch) [gutter-left-end] minmax(8ch, 10ch) minmax(8ch, 10ch) [gutter-right-start] minmax(8ch, 10ch) [middle-end] minmax(8ch, 10ch) [body-inset-end] 1rem [body-end gutter-right-end] 3rem [body-outset-end] minmax(5rem, 13rem) [page-inset-end] 3rem [page-end] 1fr [screen-inset-end] .5rem [screen-end]; */
-            [screen-start] .5rem [screen-inset-start] 1fr [page-start] 3rem [page-inset-start] minmax(4rem, 9rem) [body-outset-start] 3rem [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 10ch) [middle-start] minmax(8ch, 10ch) [gutter-left-end] minmax(8ch, 10ch) minmax(8ch, 10ch) [gutter-right-start] minmax(8ch, 10ch) [middle-end] minmax(8ch, 10ch) [body-inset-end] 1rem [body-end gutter-right-end] 3rem [body-outset-end] minmax(5rem, 13rem) [page-inset-end] 3rem [page-end] 1fr [screen-inset-end] .5rem [screen-end];
+    html {
+        .article-grid, .xl\:article-grid {
+            grid-template-columns:
+            /* [screen-start] .5rem [screen-inset-start] 1fr [page-start] 3rem [page-inset-start] minmax(4rem, 9rem) [body-outset-start] 3rem [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 10ch) [middle-start] minmax(8ch, 10ch) [gutter-left-end] minmax(8ch, 10ch) minmax(8ch, 10ch) [gutter-right-start] minmax(8ch, 10ch) [middle-end] minmax(8ch, 10ch) [body-inset-end] 1rem [body-end gutter-right-end] 3rem [body-outset-end] minmax(5rem, 13rem) [page-inset-end] 3rem [page-end] 1fr [screen-inset-end] .5rem [screen-end]; */
+                [screen-start] .5rem
+                [screen-inset-start] 1fr
+                [page-start] 3rem
+                [page-inset-start] minmax(4rem, 9rem)
+                [body-outset-start] 3rem
+                [body-start gutter-left-start] 1rem
+                [body-inset-start] minmax(8ch, 10ch)
+                [middle-start] minmax(8ch, 10ch)
+                [gutter-left-end] minmax(8ch, 10ch)
+                /* this is the one we increase */
+                minmax(20ch, 40ch)
+                [gutter-right-start] minmax(8ch, 10ch)
+                [middle-end] minmax(8ch, 10ch)
+                [body-inset-end] 1rem
+                [body-end gutter-right-end] 3rem
+                [body-outset-end] minmax(5rem, 13rem)
+                [page-inset-end] 3rem
+                [page-end] 1fr
+                [screen-inset-end] .5rem
+                [screen-end] !important;
+        }
+        /*
+        the left hand side toc has this in a min-width: 1280px media clause
+        .xl\:col-margin-left {
+            grid-column: page / body-start;
     }
-    /*
-    the left hand side toc has this in a min-width: 1280px media clause
-    .xl\:col-margin-left {
-        grid-column: page / body-start;
 }
     */
 }
