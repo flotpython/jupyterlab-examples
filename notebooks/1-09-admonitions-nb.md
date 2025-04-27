@@ -264,6 +264,8 @@ same but now we wrap the admo content within a *div* MyST tag
 `````{admonition} in a div inside admonition
 :class: seealso
 
+regular size
+
 ````{div}
 :class: custom
 
