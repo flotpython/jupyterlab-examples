@@ -203,6 +203,10 @@ p>code {
     }
 }
 
+.full-width {
+    grid-column: body / page;
+}
+
 /* here's the settings for the medium size screens
  * it's hard to do much better,
  * ideally the right had side toc could take a little less space
