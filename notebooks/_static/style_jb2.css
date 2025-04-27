@@ -216,17 +216,40 @@ p>code {
 } */
 
 
+/* ---------- tables */
+html.light {
+    --myst-table-background-color-header: #f8f8f8;
+    --myst-table-background-color-even: #fbfbfb;
+    --myst-table-background-color-odd: #fdfdfd;
+}
 
->>/* but keep the upper-left logo to grow too much */
-/* .navbar-brand.logo>img {
-        max-width: 250px;
-        max-height: 170px;
-    } */
+html.dark {
+    --myst-table-background-color-header: #080808;
+    --myst-table-background-color-even: #020202;
+    --myst-table-background-color-odd: #040404;
+}
 
-*/
-/* div.prompt.input_prompt, div.prompt.output_prompt {
-    opacity: 0.6;
-} */
+article main table {
+    thead, tfoot {
+        tr {
+            background-color: var(--myst-table-background-color-header);
+        }
+    }
+    tbody {
+        th {
+            background-color: var(--myst-table-background-color-header);
+            padding:0.65rem;
+            font-size: larger;
+        }
+        tr:nth-child(even) {
+            background-color: var(--myst-table-background-color-even);
+        }
+
+        tr:nth-child(odd) {
+            background-color: var(--myst-table-background-color-odd)
+        }
+    }
+}
 
 /* jupyterlab-myst and tables */
 /* :is(.bd-container, .myst) table td {
