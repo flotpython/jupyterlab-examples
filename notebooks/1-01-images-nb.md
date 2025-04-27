@@ -114,7 +114,6 @@ some text after
 
 `````{admonition} same, with multiple images
 :class: dropdown seealso
-````{div}
 some text before
 
 ```{image} media/board-8x8-small.png
@@ -128,7 +127,6 @@ some text in the middle, another image (even if it looks the same)
 ```
 
 some text after
-````
 `````
 
 +++
