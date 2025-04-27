@@ -10,14 +10,15 @@ project:
   # in the upper right area (close to the github button)
   license: CC-BY-NC-SA-4.0
   # inserted under the title
+  # would be nice if it could be limited to the cover page
   authors:
     - Thierry Parmentelat
+  date: 2025-03-15
   github: https://github.com/flotpython/jupyterlab-examples
   keywords:
     - notebooks
     - MyST
     - Jupyter
-  date: 2025-03-15
   # bibliography: []
 
 site:
