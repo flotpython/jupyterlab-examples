@@ -111,9 +111,11 @@ html article main .relative.group[data-mdast-node-id] {
         &::before {
             content: ' ∅ no output ∅ ';
         }
+
         border-color: var(--myst-output-empty-border-color);
         margin-bottom: 1rem;
     }
+
     border-radius: var(--myst-code-border-radius);
     padding: 5px 10px;
     border-width: var(--myst-code-border-width);
@@ -175,7 +177,7 @@ p>code {
     html {
         .article-grid, .xl\:article-grid {
             grid-template-columns:
-            /* [screen-start] .5rem [screen-inset-start] 1fr [page-start] 3rem [page-inset-start] minmax(4rem, 9rem) [body-outset-start] 3rem [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 10ch) [middle-start] minmax(8ch, 10ch) [gutter-left-end] minmax(8ch, 10ch) minmax(8ch, 10ch) [gutter-right-start] minmax(8ch, 10ch) [middle-end] minmax(8ch, 10ch) [body-inset-end] 1rem [body-end gutter-right-end] 3rem [body-outset-end] minmax(5rem, 13rem) [page-inset-end] 3rem [page-end] 1fr [screen-inset-end] .5rem [screen-end]; */
+                /* [screen-start] .5rem [screen-inset-start] 1fr [page-start] 3rem [page-inset-start] minmax(4rem, 9rem) [body-outset-start] 3rem [body-start gutter-left-start] 1rem [body-inset-start] minmax(8ch, 10ch) [middle-start] minmax(8ch, 10ch) [gutter-left-end] minmax(8ch, 10ch) minmax(8ch, 10ch) [gutter-right-start] minmax(8ch, 10ch) [middle-end] minmax(8ch, 10ch) [body-inset-end] 1rem [body-end gutter-right-end] 3rem [body-outset-end] minmax(5rem, 13rem) [page-inset-end] 3rem [page-end] 1fr [screen-inset-end] .5rem [screen-end]; */
                 [screen-start] .5rem
                 [screen-inset-start] 1fr
                 [page-start] 3rem
@@ -200,7 +202,7 @@ p>code {
     }
 }
 
-/* here's the settings for the medium size screens 
+/* here's the settings for the medium size screens
  * it's hard to do much better,
  * ideally the right had side toc could take a little less space
 */
