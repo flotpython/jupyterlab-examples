@@ -251,37 +251,6 @@ article main table {
     }
 }
 
-/* jupyterlab-myst and tables */
-/* :is(.bd-container, .myst) table td {
-    padding: initial !important;
-}
-
-:is(.bd-container, .myst) table tbody tr:nth-child(odd) {
-    background-color: #fdfdfd;
-}
-
-:is(.bd-container, .myst) table tbody tr:nth-child(even) {
-    background-color: #fbfbfb;
-}
-
-:is(.bd-container, .myst) table :is(thead, tfoot) tr {
-    background-color: #f8f8f8;
-}
-
-html[data-theme='dark'] {
-    & :is(.bd-container, .myst) table tbody tr:nth-child(odd) {
-        background-color: #020202;
-    }
-
-    & :is(.bd-container, .myst) table tbody tr:nth-child(even) {
-        background-color: #040404;
-    }
-
-    & :is(.bd-container, .myst) table :is(thead, tfoot) tr {
-        background-color: #080808;
-    }
-} */
-
 /* space before admonitions */
 /* :is(.bd-container, .myst) div.admonition>.admonition-title+* {
     margin-top: 0px !important;
