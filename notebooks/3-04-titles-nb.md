@@ -13,7 +13,7 @@ language_info:
   pygments_lexer: ipython3
 ---
 
-# toplevel title A
+# 2 toplevel titles
 
 it seems like notebook classic, with the toc extension enabled, would automatically add numbering to titles
 
