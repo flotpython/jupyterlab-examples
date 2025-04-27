@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,8 +11,6 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: exercises
 ---
 
 # exercises
@@ -155,7 +152,3 @@ I don't have a very stable way to present solutions, here's one suboptimal way t
 
 the solution
 ````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

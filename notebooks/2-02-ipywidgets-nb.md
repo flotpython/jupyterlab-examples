@@ -14,8 +14,6 @@ language_info:
   pygments_lexer: ipython3
 ---
 
-+++
-
 # ipywidgets (nope)
 
 curious to see how it goes; in a nutshell:
@@ -90,5 +88,3 @@ plt.figure()
 
 interact(frequency, f=widgets.FloatSlider(min=1, max=10, value=2));
 ```
-
-License CC BY-NC-ND, Thierry Parmentelat

@@ -39,7 +39,6 @@ with colons instead of backticks - this works well in jlab, but not in jbook
 
 +++
 
-
 `````bash
 the code below breaks it very hard, I keep for next time I want to try it, but for now it is too disruptive
 
@@ -83,7 +82,3 @@ and the admonition is made with backticks - not working in jlab, and not in jboo
 
 ````
 `````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

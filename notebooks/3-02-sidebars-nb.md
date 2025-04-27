@@ -115,7 +115,7 @@ and below so we see how it goes
 ## full-width
 
 a feature to take advantage of residual space on the right hand side  
-of course this is targetting the jbook output  
+of course this is targetting the jbook output
 
 +++
 
@@ -124,9 +124,8 @@ of course this is targetting the jbook output
 obtained with the `full-width` tag on the cell; **no longer works with jb2** for now...
 
 ```{code-cell} ipython3
----
-tags: [full-width]
----
+:tags: [full-width]
+
 data = """
 --------------------------------------------------------------------------------------------------------------------
 ====================================================================================================================

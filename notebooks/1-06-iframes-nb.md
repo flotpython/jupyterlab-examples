@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,11 +11,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: iframes
 ---
-
-+++ {"tags": []}
 
 # iframes
 
@@ -114,7 +109,3 @@ using remote URLS is OK - can't seem to set the heiht though
 :height: 400px
 :align: center
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

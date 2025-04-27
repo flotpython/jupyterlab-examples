@@ -76,5 +76,3 @@ plt.imshow(grid)
 plt.figure()
 plt.imshow(1-grid);
 ```
-
-License CC BY-NC-ND, Thierry Parmentelat

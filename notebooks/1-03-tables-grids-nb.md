@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,11 +11,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: tables & grids
 ---
-
-+++ {"tags": []}
 
 # tables & grids
 
@@ -28,7 +23,7 @@ several variations on using tables and grids
 
 ## tables
 
-+++ {"tags": []}
++++
 
 ### regular markdown
 

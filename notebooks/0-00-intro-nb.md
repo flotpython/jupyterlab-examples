@@ -56,7 +56,7 @@ summarize most of our notebook recipes, regarding among others
 * mermaid: some inline (git)graphs using `mermaid.js`
 ````
 
-+++ {"tags": []}
++++
 
 ````{admonition} for what targets
 :class: seealso
@@ -67,7 +67,3 @@ and check how that renders in the following contexts
 * jlab4, with a cocktail of extensions, at least
   * `jupytext`, `jupyterlab-myst`, and more optionnally now, `jupyterlab-courselevels`
 ````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

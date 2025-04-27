@@ -37,7 +37,3 @@ on purpose: not using a dropdown in this context
 ```
 ````
 `````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

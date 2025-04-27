@@ -33,7 +33,3 @@ so right now this opens as a text file...
 +++
 
 so *a fortiori* this won't work inside a dropdown..
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

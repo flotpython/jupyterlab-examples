@@ -12,8 +12,6 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: an nbhosting title
 ---
 
 # readthedocs (jb1)
@@ -94,7 +92,3 @@ within the rtd builds page, for using the whole width, type in the console
 ```js
 document.querySelector("#content>.wrapper").style.width = "100%"
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

@@ -64,7 +64,3 @@ df.head()
 ```
 ````
 `````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

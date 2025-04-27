@@ -97,7 +97,3 @@ using the `figure` myst directive again
 ```{figure} _static/under-static.mp4
 this works in mystmd/jb2, but not in jlab
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

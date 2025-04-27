@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,11 +11,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: admonitions
 ---
-
-+++
 
 # admonitions
 
@@ -277,7 +272,3 @@ it does not seem to work either
 - in jbook the rendering is unaffected
 ````
 `````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

@@ -173,7 +173,3 @@ the body
 ## the end
 
 to see the last spacing
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

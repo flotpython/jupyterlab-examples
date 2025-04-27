@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,11 +11,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: nbautoeval
 ---
-
-+++ {"tags": []}
 
 # nbautoeval
 
@@ -48,7 +43,3 @@ def pgcd(a, b):
 ```{code-cell} ipython3
 exo_pgcd.correction(pgcd)
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

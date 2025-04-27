@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,11 +11,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: pythontutor
 ---
-
-+++ {"tags": []}
 
 # pythontutor
 
@@ -72,7 +67,3 @@ from ipywidgets import HTML as ipyHTML
 ```{code-cell} ipython3
 ipyHTML(my_table("student", "grade", "jean", 10))
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

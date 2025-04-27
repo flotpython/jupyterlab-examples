@@ -95,7 +95,3 @@ when deployed on *readthedocs.io* things seem to be working rather fine (with sa
 
 - another story by psychemedia
   <https://psychemedia.github.io/storynotes/running-the-book-code.html?highlight=jupyterlite>
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

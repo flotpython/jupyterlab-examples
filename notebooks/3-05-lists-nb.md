@@ -91,7 +91,3 @@ a paragraph and a 3-level list
   * another subitem
     * that has subitems
     * one any number
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

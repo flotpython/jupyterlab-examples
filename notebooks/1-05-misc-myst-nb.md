@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,8 +11,6 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: miscell MyST
 ---
 
 # miscell MyST
@@ -116,7 +113,3 @@ import os
 admitting that the `USER` environment variable is set, we can also insert its value:
 
 ### in a title we get the user id as {eval}`os.environ['USER']`
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

@@ -149,7 +149,3 @@ do not put spaces in the line list
 :linenos: true
 :emphasize-lines: 2,4,6
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

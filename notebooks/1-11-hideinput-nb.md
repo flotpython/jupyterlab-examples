@@ -46,17 +46,15 @@ on a historical note: in nbclassic this used to be marked with `metadata.hide_in
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 2 hide-input cells below
 
 ```{code-cell} ipython3
----
-tags: [remove-input]
----
+:tags: [remove-input]
+
 # this text should be hidden
 print("should show the output but not the code")
 ```
 
 ```{code-cell} ipython3
----
-tags: [remove-input]
----
+:tags: [remove-input]
+
 # this text should be hidden
 print('and another hide-input cell')
 ```
@@ -85,13 +83,8 @@ below we repeat these 2 cells, with hide-input set
 a (hidden-input) markdown cell wont show up at all
 
 ```{code-cell} ipython3
----
-tags: [remove-input]
----
+:tags: [remove-input]
+
 # code (hidden-input) will just produce an output, but won't show up
 print("hello")
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

@@ -1,5 +1,4 @@
 ---
-celltoolbar: Edit Metadata
 jupytext:
   text_representation:
     extension: .md
@@ -12,11 +11,7 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: mermaid
 ---
-
-+++ {"tags": []}
 
 # mermaid
 
@@ -79,7 +74,7 @@ gitGraph
     commit id: "C" type: HIGHLIGHT
 ```
 
-+++ {"tags": []}
++++
 
 `git switch -c devel A`
 
@@ -100,7 +95,7 @@ gitGraph
 * `git switch devel`   (teleport to branch `devel`)
 ```
 
-+++ {"tags": []}
++++
 
 `git commit`
 
@@ -115,7 +110,7 @@ gitGraph
     commit id: "D" type: HIGHLIGHT
 ```
 
-+++ {"tags": []}
++++
 
 `git commit`
 
@@ -131,7 +126,7 @@ gitGraph
     commit id: "E" type: HIGHLIGHT
 ```
 
-+++ {"tags": []}
++++
 
 `git merge main`
 
@@ -148,7 +143,7 @@ gitGraph
     merge main id: "F" type: HIGHLIGHT
 ```
 
-+++ {"tags": []}
++++
 
 `git switch main`
 
@@ -166,7 +161,7 @@ gitGraph
     checkout main
 ```
 
-+++ {"tags": []}
++++
 
 `git merge devel main`
 
@@ -183,7 +178,3 @@ gitGraph
     checkout main
     merge devel id: "F" type: HIGHLIGHT
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

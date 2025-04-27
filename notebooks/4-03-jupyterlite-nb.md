@@ -42,7 +42,3 @@ omitting the theme
 :prompt: jupyterlite on one notebook
 :prompt_color: blue
 ```
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

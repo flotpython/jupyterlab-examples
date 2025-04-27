@@ -11,8 +11,6 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
-nbhosting:
-  title: toplevel title A
 ---
 
 # toplevel title A
@@ -34,7 +32,3 @@ a paragraph
 +++
 
 another paragraph
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

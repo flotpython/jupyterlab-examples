@@ -19,7 +19,3 @@ this is the first part of the TP
 +++
 
 # multi-part TP (1/2)
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat

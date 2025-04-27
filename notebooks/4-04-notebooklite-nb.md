@@ -65,7 +65,3 @@ probably the way to go; a few caveats:
 ```
 ````
 `````
-
-+++
-
-License CC BY-NC-ND, Thierry Parmentelat
