@@ -16,7 +16,9 @@ nbhosting:
   title: an nbhosting title
 ---
 
-# initializing readthedocs
+# readthedocs (jb1)
+
+***FOR THE RECORD ONLY THIS APPLIES TO JB1 ONLY***
 
 setting up the readthedocs project often turns up painful  
 here's a few notes about that stage - as of 2023 september
