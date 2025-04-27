@@ -154,4 +154,13 @@ a cell with a small height
 
 +++
 
-License CC BY-NC-ND, Thierry Parmentelat
+## pandas dataframes
+
+looks good as is
+
+```{code-cell} ipython3
+import pandas as pd
+
+df = pd.read_csv("data/titanic.csv")
+df.head(10)
+```
