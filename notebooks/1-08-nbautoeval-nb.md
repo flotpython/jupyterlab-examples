@@ -22,7 +22,7 @@ nbhosting:
 
 +++
 
-## nbautoeval
+## not working in a static site
 
 here is a first, static, test; there is also another, [better way with a dynamic interface thanks to jupyterlite](label-nbautoeval-dynamic)
 

@@ -16,7 +16,7 @@ language_info:
 
 +++
 
-# ipywidgets
+# ipywidgets (nope)
 
 curious to see how it goes; in a nutshell:
 
