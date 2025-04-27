@@ -221,12 +221,14 @@ p>code {
 /* ---------- tables */
 html.light {
     --myst-table-background-color-header: #f8f8f8;
+    --myst-table-bottom-color-header: rgb(90, 175, 211);
     --myst-table-background-color-even: #fbfbfb;
     --myst-table-background-color-odd: #fdfdfd;
 }
 
 html.dark {
     --myst-table-background-color-header: #080808;
+    --myst-table-bottom-color-header: rgb(11, 128, 137);
     --myst-table-background-color-even: #020202;
     --myst-table-background-color-odd: #040404;
 }
@@ -242,6 +244,8 @@ article main table {
             background-color: var(--myst-table-background-color-header);
             padding:0.65rem;
             font-size: larger;
+            border-bottom-color: var(--myst-table-bottom-color-header);
+            border-bottom-width: 2px;
         }
         tr:nth-child(even) {
             background-color: var(--myst-table-background-color-even);
