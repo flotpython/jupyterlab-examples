@@ -134,10 +134,20 @@ some text after
 ## inline images ?
 
 wondering if one can use an image like it was a font character
-![](media/board-8x8-micro.png) and **insert it inline**; - as of 2025 march this works with jlab but causes line breaks with mystmd/jb2
+![](media/board-8x8-micro.png) and **insert it inline**
 
-in any case remember the markdown syntax does not let us set a size...
+as of 2025 april:
+- this works with jlab
+- but with mystmd/jb2:
+  - it causes line breaks in the devel version (`mystmd start --execute`)
+  - while the published version (`myst build --execute`) renders this on a single line allright
+
+in any case remember the markdown syntax does not let us set a size, so for this example to work we have produced a resized image...
 
 +++
 
-License CC BY-NC-ND, Thierry Parmentelat
+## inlined image with a html tag ?
+
+same but this time we use  html fragment with an explicit size: <img src="media/board-8x8.png" style="width: 20px" /> to insert the image and **insert it inline**
+
+not only it does cause a line break, but it also does not resize the image !
