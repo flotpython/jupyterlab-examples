@@ -111,6 +111,7 @@ html article main .relative.group[data-mdast-node-id] {
         &::before {
             content: ' ∅ no output ∅ ';
         }
+        font-size: x-small;
 
         border-color: var(--myst-output-empty-border-color);
         margin-bottom: 1rem;
