@@ -23,7 +23,9 @@ project:
           title: a title set in the toc
           weirdo: should trigger some error
         - file: 5-02-dummy-prune-nb.md
-          title: using nbprune
+          title: using nbprune but this is not taken into account
+        - file: .teacher/5-02-dummy-prune-corrige-nb.md
+          hidden: true
         # here we could use the ability to get rid of the umbrella
         - title: multi-part TP
           children:
