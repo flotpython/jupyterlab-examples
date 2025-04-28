@@ -112,14 +112,16 @@ html article main .relative.group[data-mdast-node-id] {
         &::before {
             content: ' ∅ no output ∅ ';
         }
-        font-size: x-small;
+        font-size: xx-small;
+        padding: 0px 1rem;
 
         border-color: var(--myst-output-empty-border-color);
-        margin-bottom: 1rem;
+        margin-bottom: 0.6rem;
     }
 
     border-radius: var(--myst-code-border-radius);
-    padding: 5px 10px;
+    margin-top: 0px;
+    padding: 0.25em 1rem;
     border-width: var(--myst-code-border-width);
     border-color: var(--myst-output-border-color);
     background-color: var(--myst-output-background-color);
@@ -132,6 +134,9 @@ html article main .relative.group[data-mdast-node-id] {
             border: 0px solid #00000000 !important;
         }
     }
+}
+html article main .relative.group:has(+[data-mdast-node-id]) {
+    margin-bottom: 0.7em;
 }
 
 /* code blocks */
