@@ -6,7 +6,7 @@ project:
   # in any case as of now 2024 june the title is used for the tooltip too (a bit silly)
   # and I can't see where this is used
   description: "dummy course to check for publication tooling"
-  # this one causes additional buttons to be shown 
+  # this one causes additional buttons to be shown
   # in the upper right area (close to the github button)
   license: CC-BY-NC-SA-4.0
   # inserted under the title
@@ -20,6 +20,8 @@ project:
     - MyST
     - Jupyter
   # bibliography: []
+  settings:
+    output_matplotlib_strings: warn
 
 site:
   template: book-theme
