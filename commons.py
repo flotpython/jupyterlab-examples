@@ -32,7 +32,7 @@ PROJECT_PATTERNS = [
     "ue12-p25-intro",
     "ue12-p25-numerique",
     "flotpython-exos-ds",
-    "ue12-p24-git",
+    "ue12-p25-git",
     "flotpython-slides",
     "flotpython-exos-python",
 # not yet duplicated
@@ -53,10 +53,11 @@ COMMONS = [
     'Makefile.toc',
     'Makefile.norm',
     'jupytext.toml',
-    '.readthedocs.yaml',
     'myst-to-pages.yml',
-    'my-book.js',
     'my-book2.js',
+    # this was more for jb1 but let's keep it until totally deprecated
+    'my-book.js',
+    '.readthedocs.yaml',
     # no longer useful with this file as we focus on a specific set of projects
     # plus, this is changing with pyproject.toml
     # 'Makefile.pypi',
