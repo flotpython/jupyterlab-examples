@@ -291,7 +291,6 @@ article main table {
 .corrige {
     background-image: radial-gradient(circle at top left, #d1effa, #e2f9cd);
 }
-
-html[data-theme='dark'] .corrige {
+html.dark .corrige {
     background-image: radial-gradient(circle at top left, #0e3852, #0c5517);
 }
