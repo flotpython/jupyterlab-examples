@@ -24,13 +24,16 @@ project:
           weirdo: should trigger some error
         - file: 5-02-dummy-prune-nb.md
           title: using nbprune but this is not taken into account
+        # here's how to define the corrige files with the hidden flag
         - file: .teacher/5-02-dummy-prune-corrige-nb.md
           hidden: true
-        # here we could use the ability to get rid of the umbrella
+        # getting rid of the umbrella
         - title: multi-part TP
           children:
             - file: 5-03-part1-nb.md
             - file: 5-03-part2-nb.md
+        # urls not yet supported in mystmd
+        # see https://github.com/jupyter-book/mystmd/issues/1445
         - url: https://flotpython-exos-ds.readthedocs.io/en/main/ds-tps/images/README-images1-nb.html
           title: link to external TP
     - title: setup
