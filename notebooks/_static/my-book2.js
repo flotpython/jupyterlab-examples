@@ -1,39 +1,47 @@
-// standard JS additions for our jupyter books
+// standard JS additions for our jupyter book
+// this version targets jupyter-book2 aka mystmd
 
-// expose to the console
 const cheatCorrige = () => {
     // open a corrige file which is located under
     // the .teacher folder with an extra "corrige-" suffix
-    // e.g. "my-book-nb.html" -> ".teacher/my-book-nb-corrige.html"
+    // this assumes the mystmd config has
+    // site.options.folder = true
+    // in that case the transformation that we need to do is
+    // e.g. my-book-nb -> teacher/my-book-corrige-nb
+    // (even though the folder is actually .teacher)
     const currentLocation = window.location.href
     let newLocation
     if (currentLocation.includes("-corrige"))
         // undo: go back to the student version
         newLocation = currentLocation.replace(
-            /(.*)\/\.teacher\/([A-Za-z0-9_-]+)-corrige-nb\.html/gm,
-            "$1/$2-nb.html"
+            /(.*)\/teacher\/([A-Za-z0-9_-]+)-corrige-nb/gm,
+            "$1/$2-nb"
         )
     else
         newLocation = currentLocation.replace(
-            /(.*)\/([A-Za-z0-9_-]+)-nb\.html/gm,
-            "$1/.teacher/$2-corrige-nb.html"
+            /(.*)\/([A-Za-z0-9_-]+)-nb/gm,
+            "$1/teacher/$2-corrige-nb"
         )
-    if (newLocation === currentLocation) {
-        console.log("from my-book.js: no corrige file found")
+    if (newLocation !== currentLocation) {
+        window.location.href = newLocation
+    } else {
+        console.log("from my-book2.js: no corrige file found")
         return
     }
-    window.location.href = newLocation
 }
 
 // run the following code when the page is loaded
 window.addEventListener('load',
     () => {
 
-        const urlTocEntriesOpenInNewTab = () => {
-            console.log("from my-book.js: url-typed toc entries open in a separate tab")
-            document.querySelectorAll("nav a.reference.external")
-                .forEach(node => node.target = "_blank")
-        }
+        // jb2 does not yet support url entries
+        // https://github.com/jupyter-book/mystmd/issues/1445
+        // this part will require tuning once it is the case
+        // const urlTocEntriesOpenInNewTab = () => {
+        //     console.log("from my-book2.js: url-typed toc entries open in a separate tab")
+        //     document.querySelectorAll("nav a.reference.external")
+        //         .forEach(node => node.target = "_blank")
+        // }
 
         // define a keyboard shortcut to open the corrige file
         // want to be able to communicate the use of Ctrl-Shift-?
@@ -50,9 +58,8 @@ window.addEventListener('load',
         // on a qwerty linux,  ? is the lowercase and / the uppercase
         const lowercases = { '/': true, ',': true, '?': true }
         const cheatCorrigeShortcut = () => {
-            console.log("from my-book.js: define corrige magic shortcut")
+            console.log("from my-book2.js: define corrige magic shortcut")
             document.addEventListener("keydown", (event) => {
-                // console.log("keydown", event)
                 if (event.key in lowercases && event.ctrlKey && event.shiftKey) {
                     cheatCorrige()
                 }
@@ -67,7 +74,7 @@ window.addEventListener('load',
         }
 
         // our setup
-        urlTocEntriesOpenInNewTab()
+        // urlTocEntriesOpenInNewTab()
         outlineCorrige()
         cheatCorrigeShortcut()
     })
