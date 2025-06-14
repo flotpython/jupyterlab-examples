@@ -13,7 +13,7 @@ project:
   # would be nice if it could be limited to the cover page
   authors:
     - Thierry Parmentelat
-  date: 2025-03-15
+  date: 2025-06-15
   github: https://github.com/flotpython/jupyterlab-examples
   keywords:
     - notebooks
