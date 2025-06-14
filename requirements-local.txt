@@ -12,3 +12,5 @@ nbautoeval
 # no longer heavily used
 jupyterlab-courselevels
 
+folium
+graphviz
