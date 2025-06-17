@@ -31,13 +31,15 @@ def commons_cli():
 PROJECT_PATTERNS = [
     "ue12-p25-intro",
     "ue12-p25-numerique",
+    # still jb1
     "flotpython-exos-ds",
     "ue12-p25-git",
     "flotpython-slides",
+    # still jb1
     "flotpython-exos-python",
-# not yet duplicated
-    "ue22-p24-web",
-#    "ue22-p24-web",
+    "ue22-p25-frontend",
+    # uses an odd build tool - not yet adapted for p25
+#    "ue22-p24-backend",
     "jupyterlab-examples",
 ]
 
