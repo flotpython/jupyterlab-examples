@@ -163,3 +163,11 @@ paris_map()
 ### referencing the map
 
 [this should show a map ?](#the-labeled-map)
+
++++
+
+## referencing a hidden notebook
+
+
+
+[Hover me to refer to the cell labeled `the-hidden-reference`](#the-hidden-reference)
