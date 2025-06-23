@@ -32,6 +32,10 @@ project:
           children:
             - file: 5-03-part1-nb.md
             - file: 5-03-part2-nb.md
+        # just for the contents to be available to other notebooks
+        # but should not appear in the toc
+        - file: 5-04-hidden-nb.md
+          hidden: true
         # urls not yet supported in mystmd
         # see https://github.com/jupyter-book/mystmd/issues/1445
         - url: https://flotpython-exos-ds.readthedocs.io/en/main/ds-tps/images/README-images1-nb.html
