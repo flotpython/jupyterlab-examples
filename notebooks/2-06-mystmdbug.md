@@ -16,6 +16,8 @@ language_info:
 
 # mystmd xref bug reproduction
 
+see https://github.com/jupyter-book/mystmd/issues/2120
+
 +++
 
 ## define a cell with a label
