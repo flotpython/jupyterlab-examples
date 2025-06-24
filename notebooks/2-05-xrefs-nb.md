@@ -35,8 +35,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-+++ {"jp-MarkdownHeadingCollapsed": true}
-
 ### the source cell
 
 we put a label `the-labeled-plot` on the following code cell
