@@ -39,7 +39,7 @@ PROJECT_PATTERNS = [
     "flotpython-exos-python",
     "ue22-p25-frontend",
     # uses an odd build tool - not yet adapted for p25
-#    "ue22-p24-backend",
+    "ue22-p25-backend",
     "jupyterlab-examples",
 ]
 
