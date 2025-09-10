@@ -24,19 +24,19 @@ project:
     output_matplotlib_strings: warn
 
 site:
+  # there obviously is a difference between local and online builds...
   # template: book-theme
   # https://github.com/jupyter-book/myst-theme/issues/635
-  # 0.15.0 : looks OK but the first entry numpy-introduction-nb brings me to a 404 (most of the time..)
-  template: https://github.com/myst-templates/book-theme/archive/74c81fa6b6b8bc0852498031aaf753bdc72685d5.zip
-  # 0.15.1 : totally wrong
+  # 0.15.0 : once published online, behaves exactly like latest version
+  # template: https://github.com/myst-templates/book-theme/archive/74c81fa6b6b8bc0852498031aaf753bdc72685d5.zip
+  # 0.15.1 :
   # template: https://github.com/myst-templates/book-theme/archive/ed9e02dd952e1cc19e5dc877ec7860c505e087b8.zip
-  # 0.15.2 : totally wrong
+  # 0.15.2 :
   # template: https://github.com/myst-templates/book-theme/archive/cff6f8852595cc39843bc984902a70453a5731c0.zip
   # 0.16.0
   # template: https://github.com/myst-templates/book-theme/archive/b4f7ed0e437f59750d1702028c2c39cd87e47eaa.zip
-  # 0.17.0 : exact same behaviour locally as 0.15.0
-  # there obviously is a difference between local and online builds...
-  # template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
+  # 0.17.0 :
+  template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
 
   # used in the tab name
   title: jlab-examples
