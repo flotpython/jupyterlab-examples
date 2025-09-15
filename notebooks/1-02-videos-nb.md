@@ -85,7 +85,7 @@ works in both jlab and jb2
 using the `figure` myst directive
 
 ```{figure} media/under-media.mp4
-this works in mystmd/jb2, but not in jlab
+this works in mystmd/jb2 (only in autoplay), but not in jlab
 ```
 
 +++
@@ -95,5 +95,5 @@ this works in mystmd/jb2, but not in jlab
 using the `figure` myst directive again
 
 ```{figure} _static/under-static.mp4
-this works in mystmd/jb2, but not in jlab
+this works in mystmd/jb2 (only in autoplay), but not in jlab
 ```
