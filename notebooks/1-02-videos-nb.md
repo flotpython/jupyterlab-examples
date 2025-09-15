@@ -26,7 +26,7 @@ from IPython.display import IFrame
 
 # Youtube
 IFrame(
-    "https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0&amp;showinfo=0",
+    "https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0",
     width="600",
     height="400",
     # extras='frameborder="0" allowfullscreen',
@@ -47,7 +47,7 @@ from IPython.display import IFrame
 
 # Youtube
 IFrame(
-    "https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0&amp;showinfo=0",
+    "https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0",
     width="600",
     height="400",
     # extras='frameborder="0" allowfullscreen',
@@ -73,7 +73,7 @@ Video.from_file("_static/under-static.mp4", autoplay=False, width='800px')
 
 using the `iframe` myst directive
 
-```{iframe} https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0&amp;showinfo=0
+```{iframe} https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0
 
 works in both jlab and jb2
 ```
