@@ -25,8 +25,10 @@ project:
 
 site:
   # there obviously is a difference between local and online builds...
-  # template: book-theme
+  template: book-theme
   # https://github.com/jupyter-book/myst-theme/issues/635
+  # start here to find the right hash
+  # https://github.com/myst-templates/article-theme/commits/main/
   # 0.15.0 : once published online, behaves exactly like latest version
   # template: https://github.com/myst-templates/book-theme/archive/74c81fa6b6b8bc0852498031aaf753bdc72685d5.zip
   # 0.15.1 :
@@ -36,7 +38,7 @@ site:
   # 0.16.0
   # template: https://github.com/myst-templates/book-theme/archive/b4f7ed0e437f59750d1702028c2c39cd87e47eaa.zip
   # 0.17.0 :
-  template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
+  # template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
 
   # used in the tab name
   title: jlab-examples
