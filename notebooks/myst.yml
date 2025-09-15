@@ -22,6 +22,8 @@ project:
   # bibliography: []
   settings:
     output_matplotlib_strings: warn
+  jupyter:
+    lite: true
 
 site:
   # there obviously is a difference between local and online builds...
