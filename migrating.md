@@ -13,6 +13,13 @@ this is a problem for
 - [ ] nbautoeval (won't work in a static site anyway, unless re-written to use browser-embedded python)
 - [ ] interactive visualizations (this being said it was already not working under jb1)
 
+```{admonition}  need to dig more
+:class: warning
+
+I have seen references to using `jupyterlite` to embed a mini-jupyter in the page, which would solve the problem; 
+but I have not found any working example yet.
+```
+
 ### static stuff
 
 things in `_static` don't get found ?  
@@ -43,19 +50,51 @@ https://github.com/jupyter-book/mystmd/issues/670#issuecomment-2726442232
 
 ## what we have now
 
-| course | orga | now | target | comment | URL |
-|:------:|:----:|:---:|:------:|:-------:|:---:|
-| jupyterlab-examples | flotpython | jb2 | | **DONE** | https://flotpython.github.io/jupyterlab-examples |
-| intro | ue12-p25 | astro |  | **DONE** | https://ue12-p25.github.io/intro |
-| numerique | ue12-p25 | jb2 | | **DONE** | https://ue12-p25.github.io/numerique |
-| git | ue12-p25 | was jb1 | astro? | not-started | ... |
-| slides | flotpython | jb2 | | **DONE** | https://flotpython.github.io/slides |
-| exos-python | flotpython | jb1 | jb2 ? | check for limitations | https://flotpython.github.io/exos-python |
-| exos-ds | flotpython | jb1 | jb2 ? | check for limitations | https://flotpython.github.io/exos-ds |
-| web (rename as frontend) | ue22-p25 | was jb1 | astro? | not-started| ... |
-| backend | ue22-p25 | was remarkjs | astro? | not-started| ... |
-| backend-flask-chatapp | ue22-p25 | was codehike | same | not-started| ... |
-| backend-fastapi-notes | ue22-p25 | just Python for now | codehike | not-started| ... |
+<style>
+  .todo {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+  }
+</style>
+
+|                  course |     orga     |   tool   |         comment         | URL                                               |
+|------------------------:|:------------:|:--------:|:-----------------------:|--------------------------------------------------:|
+|                 `intro` |  `ue12-p25`  |  astro   |          done           | https://intro.info-mines.paris/                   |
+|             `numerique` |  `ue12-p25`  |   jb2    |          done           | https://numerique.info-mines.paris/               |
+|        `numerique-exos` | `flotpython` |   jb2    | done <br> limitations ? | https://numerique-exos.info-mines.paris/          |
+|                `slides` | `flotpython` |   jb2    |          done           | https://python.info-mines.paris/                  |
+|           `python-exos` | `flotpython` |   jb2    |  done<br> limitations ? | https://python-exos.info-mines.paris/             |
+|                   `git` |  `ue12-p25`  |   jb2    |          done           | https://git.info-mines.paris/                     |
+|              `frontend` |  `ue22-p25`  |   jb2    |          done           | https://frontend.info-mines.paris/                |
+|               `backend` |  `ue22-p25`  |   jb2    |          done           | https://backend.info-mines.paris/                 |
+|   `jupyterlab-examples` | `flotpython` |   jb2    |          done           | https://flotpython.github.io/jupyterlab-examples/ |
+| `backend-flask-chatapp` |  `ue22-p25`  | codehike |       not-started       | ...                                               |
+| `backend-fastapi-notes` |  `ue22-p25`  |   ???    |       not-started       | ...                                               |
+
+## Notes on domains and URLs
+
+- the simple case is with the `ue12-p25` courses
+  they are now bound to their own domain, e.g. <https://numerique.info-mines.paris/>
+- same for `ue22-p25`; that orga is also bound to the info-mines.paris domain in GH, so all is well
+- for the `flotpython` orga, we have no custom domain right now; there are several options
+  - [ ] use the `flotpython.github.io` domain, which is bound to the flotpython orga  
+    - this would give URLs like <https://flotpython.github.io/exos-python/>
+    - this requires defining BASEURL to be the project name in each repo's gh action (the default when using jb2 template action)
+  - [ ] use a separate custom domain, e.g. <https://exos-python.flotpython.io/>  
+    - this would require buying and maintaining a domain name, and setting up GH pages to use it
+    - changes would be needed in the repos themselves (so that the GH action does not set BASEURL to be the project name)
+  - [x] reuse the `info-mines.paris` domain, e.g. <https://python-exos.info-mines.paris/>  
+    - [x] this would also require setting up the GH orga to bind to that domain (no big deal)
+    - [x] same comment about BASEURL as above
+
+```{admonition} apex domain
+
+ Note that the toplevel domain `info-mines.paris` is implemented as a
+ redirect to <https://intro.info-mines.paris/> through this repo-redirect
+ https://github.com/ue12-p25/portal
+```
 
 ## JB1
 
