@@ -13,78 +13,55 @@ language_info:
   pygments_lexer: ipython3
 ---
 
-# hide-input
+# remove-in/output
 
-+++
+these 2 tags (`remove-input` and `remove-output`) are effective ***on code cells only***
 
-this may require some more checking but IIRC the `jupyterlab-courselevels` may be required for this to work properly
+the feature is activated through the code cell's `metadata.tags` that contain `remove-input` or remove-output`
 
-+++
+## textual input
 
-## code cells
+here's the textual input for the first cell below
 
-+++
-
-````{caution}
-the next code cells are marked as `metadata.tags` contains `hide-input`
-
-on a historical note: in nbclassic this used to be marked with `metadata.hide_input=true`
+````text
+```{code-cell} ipython3
+:tags: [remove-input]
+print("with remove-input we show the output but not the code")
+```
 ````
 
-+++
+## `remove-input`
 
-````{note}
-
-* thanks to (1) the jb HTML output will come as a collapsible
-* thanks to the `jupyterlab-courselevels` extension, with (1) the code cell input should be hidden in jupyterlab (and hopefully nb7 as well)
-* because of (2) the cell input will not show under nbclassic  
-  this requires the jupyter contrib extensions installed, and the hide-input extension enabled
-````
-
-+++
-
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 2 hide-input cells below
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 1 remove-input code cell below
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-
-# this text should be hidden
-print("should show the output but not the code")
+print("with remove-input we show the output but not the code")
 ```
+
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ hide-input cell above
+
+## `remove-output`
+
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 1 remove-output code cell below
 
 ```{code-cell} ipython3
-:tags: [remove-input]
-
-# this text should be hidden
-print('and another hide-input cell')
+:tags: [remove-output]
+print("this time we see the code and not the output")
 ```
 
-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ hide-input cells above
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ remove-output cell above
 
-+++
+## `remove-cell`
 
-## 2 visible cells, one text and one code
-
-+++
-
-with one markdown cell (this very one) and one code cell
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 1 remove-cell code cell below
 
 ```{code-cell} ipython3
-# code (visible)
-print("hello")
+:tags: [remove-cell]
+
+# this time we see nothing
+print("should show the code but not the output")
 ```
 
-## same with hide-input
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ remove-cell cell above
 
-below we repeat these 2 cells, with hide-input set
-
-+++ {"tags": ["remove-input"]}
-
-a (hidden-input) markdown cell wont show up at all
-
-```{code-cell} ipython3
-:tags: [remove-input]
-
-# code (hidden-input) will just produce an output, but won't show up
-print("hello")
-```

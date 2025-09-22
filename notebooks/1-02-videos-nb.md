@@ -33,7 +33,7 @@ IFrame(
 )
 ```
 
-## ditto with `hide-input`
+## ditto with `remove-input`
 
 the same with the input area hidden with 
 

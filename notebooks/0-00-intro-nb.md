@@ -48,7 +48,7 @@ summarize most of our notebook recipes, regarding among others
   note that collapsible also applies to admonitions
 
 * exercises
-* hide-input artefact (a code cell whose input code is hidden)
+* remove-input artefact (a code cell whose input code is hidden)
 * miscell usual tricks (link to a downloadable file, iframe with some static html, ...)
 * courselevels - mostly deprecated:
   * using tags to specifiy a level among basic=green, intermediate=blue, advanced=red
