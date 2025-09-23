@@ -31,14 +31,11 @@ def commons_cli():
 PROJECT_PATTERNS = [
     "ue12-p25-intro",
     "ue12-p25-numerique",
-    # still jb1
     "flotpython-exos-ds",
     "ue12-p25-git",
     "flotpython-slides",
-    # still jb1
     "flotpython-exos-python",
     "ue22-p25-frontend",
-    # uses an odd build tool - not yet adapted for p25
     "ue22-p25-backend",
     "jupyterlab-examples",
 ]
@@ -378,8 +375,9 @@ def list_projects(commons, aggregate):
 
 @commons_cli.command()
 @click.option('-r', '--relative', is_flag=True, help='Display relative paths only')
+@click.option('-v', '--verbose', is_flag=True, help='show commons names')
 @click.argument('commons', metavar='common', envvar="COMMONS", nargs=-1, type=str)
-def samples(commons, relative):
+def samples(commons, relative, verbose):
     """
     for each mentioned common file, lists one file per group
     with --relative, the filename is relative to COMMON_ROOT
@@ -388,7 +386,8 @@ def samples(commons, relative):
     """
     commons = commons_of_interest(commons)
     for common_obj in commons:
-        print(f"{4*'-'} {common_obj.common}")
+        if verbose:
+            print(f"{4*'-'} {common_obj.common}")
         common_obj.files(relative=relative)
 
 
