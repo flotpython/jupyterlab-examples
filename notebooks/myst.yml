@@ -51,7 +51,7 @@ site:
   #     url: https://mystmd.org/guide
   domains: []
   options:
-    favicon: media/flotpython-favicon.svg
+    favicon: media/flotpython-favicon.svg.ico
     logo: media/flotpython-favicon.svg
     # very visible in the header
     logo_text: "flotpython: jlab examples"
