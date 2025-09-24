@@ -4,6 +4,7 @@
 a tool to monitor projects that follow the guidelines in this project
 """
 
+import sys
 import os
 import hashlib
 from datetime import datetime as DateTime
@@ -91,7 +92,7 @@ def spot_common(seed):
     for common in COMMONS:
         if seed in common:
             return common
-    print(f"WARNING: could not spot a common file with seed {seed}, using it verbatim")
+    print(f"WARNING: could not spot a common file with seed {seed}, using it verbatim", file=sys.stderr)
     return seed
 
 
