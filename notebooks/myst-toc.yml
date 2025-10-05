@@ -14,7 +14,7 @@ project:
     - title: styles & spaces
       children:
         - pattern: 3-[0-9]*
-    - title: jupyter lite
+    - title: execution
       children:
         - pattern: 4-[0-9]*
     - title: toc

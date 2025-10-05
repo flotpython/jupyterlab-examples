@@ -22,10 +22,11 @@ project:
   # bibliography: []
   settings:
     output_matplotlib_strings: warn
-  jupyter:
-    lite: true
+  # jupyter:
+  #   lite: true
 
 site:
+  # template: https://github.com/flotpython/myst-theme/releases/download/bb9ac23/book.zip
   # there obviously is a difference between local and online builds...
   template: book-theme
   # https://github.com/jupyter-book/myst-theme/issues/635

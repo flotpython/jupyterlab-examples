@@ -11,12 +11,18 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
+nbhosting:
+  title: introduction
 ---
 
-# nbautoeval
+# execution
 
-+++
+this 'jupyterlite' version of the execution chapter this time is built with
 
-## not working in a static site
+```
+project:
+  jupyter:
+    lite: true
+```
 
-see [another attempt in the execution section](label-nbautoeval-dynamic) for other angles
+so we can see how this behaves

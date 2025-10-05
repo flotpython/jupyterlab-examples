@@ -1,0 +1,1 @@
+myst build --html

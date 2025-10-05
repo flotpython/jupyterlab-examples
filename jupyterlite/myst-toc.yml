@@ -1,0 +1,13 @@
+version: 1
+
+project:
+  toc:
+    - file: 0-00-intro-nb.md
+    - title: execution
+      children:
+        - pattern: 4*-nb.md
+
+  # Thebe configuration
+  thebe:
+    lite: true
+    # kernel: python3

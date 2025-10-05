@@ -1,0 +1,32 @@
+version: 1
+project:
+  title: flotpython - jupyterlite
+  authors:
+    - Thierry Parmentelat
+  date: 2025-10-01
+  github: https://github.com/flotpython/jupyterlab-examples
+  keywords:
+    - notebooks
+    - MyST
+    - Jupyter
+    - jupyterlite
+  # settings:
+  #   output_matplotlib_strings: warn
+  jupyter:
+    lite: true
+  downloads:
+    - file: _static/exo_pgcd.py
+
+site:
+  template: book-theme
+
+  # used in the tab name
+  title: jlab examples
+  # this would be for the horizontal header bar - not used here (yet)
+  # nav: []
+  # actions:
+  #   - title: Learn More
+  #     url: https://mystmd.org/guide
+
+extends:
+  - myst-toc.yml
