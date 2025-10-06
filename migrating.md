@@ -1,6 +1,6 @@
-# migrating out of JB1
+# migration to myst / JB2
 
-- [migrating out of JB1](#migrating-out-of-jb1)
+- [migration to myst / JB2](#migration-to-myst--jb2)
   - [execution of code cells](#execution-of-code-cells)
     - [ipywidgets](#ipywidgets)
   - [nbautoeval (won't work in a static site anyway, unless re-written to use browser-embedded python)](#nbautoeval-wont-work-in-a-static-site-anyway-unless-re-written-to-use-browser-embedded-python)
@@ -9,6 +9,7 @@
   - [corrections](#corrections)
   - [custom themes](#custom-themes)
   - [favicons](#favicons)
+  - [badges](#badges)
   - [styling](#styling)
   - [itables](#itables)
 
@@ -23,19 +24,19 @@ mostly all repos have moved to jb2 as of now
   }
 </style>
 
-|                  course |     orga     |       tool        |                    comment                    |                                               URL |
-|------------------------:|:------------:|:-----------------:|:---------------------------------------------:|--------------------------------------------------:|
-|                 `intro` |  `ue12-p25`  |       astro + <br>starlight      |                     done                      |                   https://intro.info-mines.paris/ |
-|             `numerique` |  `ue12-p25`  |        jb2        |                     done                      |               https://numerique.info-mines.paris/ |
-|        `numerique-exos` | `flotpython` |        jb2        |                     done                      |          https://numerique-exos.info-mines.paris/ |
-|                `slides` | `flotpython` |        jb2        |                     done                      |                  https://python.info-mines.paris/ |
-|           `python-exos` | `flotpython` |        jb2        |                     done                      |             https://python-exos.info-mines.paris/ |
-|                   `git` |  `ue12-p25`  |        jb2        |                     done                      |                     https://git.info-mines.paris/ |
-|              `frontend` |  `ue22-p25`  |        jb2        |                     done                      |                https://frontend.info-mines.paris/ |
-|               `backend` |  `ue22-p25`  |        jb2        |                     done                      |                 https://backend.info-mines.paris/ |
-| `backend-fastapi-notes` |  `ue22-p25`  | codehike<br>+next |                     done                      |   https://backend-fastapi-notes.info-mines.paris/ |
-| `backend-flask-chatapp` |  `ue22-p25`  |     codehike      | <span class=todo>move to new domain</span> | https://ue22-p24.github.io/backend-flask-chatapp/ |
-|   `jupyterlab-examples` | `flotpython` |        jb2        | <span class=todo>move to new domain</span> | https://flotpython.github.io/jupyterlab-examples/ |
+|                  course |     orga     |         tool          | comment |                                             URL |
+|------------------------:|:------------:|:---------------------:|:-------:|------------------------------------------------:|
+|                 `intro` |  `ue12-p25`  | astro + <br>starlight |  done   |                 https://intro.info-mines.paris/ |
+|             `numerique` |  `ue12-p25`  |          jb2          |  done   |             https://numerique.info-mines.paris/ |
+|        `numerique-exos` | `flotpython` |          jb2          |  done   |        https://numerique-exos.info-mines.paris/ |
+|                `slides` | `flotpython` |          jb2          |  done   |                https://python.info-mines.paris/ |
+|           `python-exos` | `flotpython` |          jb2          |  done   |           https://python-exos.info-mines.paris/ |
+|                   `git` |  `ue12-p25`  |          jb2          |  done   |                   https://git.info-mines.paris/ |
+|              `frontend` |  `ue22-p25`  |          jb2          |  done   |              https://frontend.info-mines.paris/ |
+|               `backend` |  `ue22-p25`  |          jb2          |  done   |               https://backend.info-mines.paris/ |
+| `backend-fastapi-notes` |  `ue22-p25`  | next + <br> codehike  |  done   | https://backend-fastapi-notes.info-mines.paris/ |
+| `backend-flask-chatapp` |  `ue22-p25`  | next + <br> codehike  |  done   | https://backend-flask-chatapp.info-mines.paris/ |
+|   `jupyterlab-examples` | `flotpython` |          jb2          |  done   |   https://jupyterlab-examples.info-mines.paris/ |
 
 let's summarize the pain points
 
@@ -46,7 +47,6 @@ let's summarize the pain points
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2318)](https://github.com/jupyter-book/mystmd/issues/2318)
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2319)](https://github.com/jupyter-book/mystmd/issues/2319)
-
 
 ### ipywidgets
 
@@ -62,7 +62,7 @@ related to the above; with a jlite kernel on board one can produce interactive w
 
 this is a problem for - at least - embedded HTML pages like folium-generated maps; see
 
-- [ ] [https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113](https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113)
+[https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113](https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113)
 
 ## slug-ed URLs
 
@@ -77,8 +77,6 @@ this is a problem for - at least - embedded HTML pages like folium-generated map
 
 ## custom themes
 
--> see https://github.com/jupyter-book/mystmd/issues/2317
-
 for a new scheme to expose built-in themes as GH releases
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2317)](https://github.com/jupyter-book/mystmd/issues/2317)
@@ -86,6 +84,19 @@ for a new scheme to expose built-in themes as GH releases
 ## favicons
 
 used a workaround which is to use .ico files instead of .svg
+
+<!-- 
+that was only about using .ico format I believe
+[![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/925)](https://github.com/jupyter-book/mystmd/issues/925) -->
+
+[![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/1985)](https://github.com/jupyter-book/mystmd/issues/1985)
+
+
+## badges
+
+are evaluated at build-time, not at read time
+
+[![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2320)](https://github.com/jupyter-book/mystmd/issues/2320)
 
 ## styling
 
