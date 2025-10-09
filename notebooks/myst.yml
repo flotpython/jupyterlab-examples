@@ -26,18 +26,12 @@ project:
   #   lite: true
 
 site:
-  # template: https://github.com/flotpython/myst-theme/releases/download/bb9ac23/book.zip
   # there obviously is a difference between local and online builds...
-  template: book-theme
+  # template: book-theme
+  template: https://github.com/flotpython/myst-theme/releases/download/sample-tag5/book.zip
   # https://github.com/jupyter-book/myst-theme/issues/635
   # start here to find the right hash
   # https://github.com/myst-templates/article-theme/commits/main/
-  # 0.15.0 : once published online, behaves exactly like latest version
-  # template: https://github.com/myst-templates/book-theme/archive/74c81fa6b6b8bc0852498031aaf753bdc72685d5.zip
-  # 0.15.1 :
-  # template: https://github.com/myst-templates/book-theme/archive/ed9e02dd952e1cc19e5dc877ec7860c505e087b8.zip
-  # 0.15.2 :
-  # template: https://github.com/myst-templates/book-theme/archive/cff6f8852595cc39843bc984902a70453a5731c0.zip
   # 0.16.0
   # template: https://github.com/myst-templates/book-theme/archive/b4f7ed0e437f59750d1702028c2c39cd87e47eaa.zip
   # 0.17.0 :
