@@ -17,46 +17,30 @@ nbhosting:
 
 # introduction
 
-we're testing **jupyterlab**, together with  the rendering under **jupyter-book v2** (aka `mystmd`), and try to make sure both outputs are consistent
+we're testing **jupyterlab**, together with rendering under **jupyter-book v2** (aka `mystmd`), and try to make sure both outputs are kinda consistent
 
-```{code-cell} ipython3
-# this is the required piece
-#%pip show jupyterlab-myst jupyterlab-jupytext jupyterlab-courselevels
-```
+## published on `info-mines.paris`
 
-## published on github.io
+[![the badge](https://github.com/flotpython/jupyterlab-examples/actions/workflows/myst-to-pages.yml/badge.svg)
+on https://jupyterlab-examples.info-mines.paris](jupyterlab-examples.info-mines.paris)
 
-[![the badge](https://github.com/flotpython/jupyterlab-examples/actions/workflows/myst-to-pages.yml/badge.svg) on https://flotpython.github.io/jupyterlab-examples](https://flotpython.github.io/jupyterlab-examples)
+:::{admonition} and the jb1 version on `readthedocs.io`
+:class: dropdown warning
 
-## formerly on readthedocs.io
+but ther's been a time where it was no longer an option with jb2  
+plus, we've moved to `info-mines.paris` anyway...  
 
-but that's currently no longer an option with jb2, so for the record
+so for the record only
 
 - last version on readthedocs.io was `jb1`
 [![the badge](https://readthedocs.org/projects/jupyterlab-examples/badge/?version=jb1) on https://jupyterlab-examples.readthedocs.io/en/jb1/](https://jupyterlab-examples.readthedocs.io/en/jb1/)
-- last build with `main` is no longer available since it targets jb2
-![the badge](https://readthedocs.org/projects/jupyterlab-examples/badge/?version=main)
+:::
 
 +++
 
-````{admonition} what we do in this series of sample notebooks
-:class: important
+## purpose
 
-summarize most of our notebook recipes, regarding among others
-
-* regular admonitions, including collapsible (texts where some part is toggable with a right or down arrow)
-  note that collapsible also applies to admonitions
-
-* exercises
-* remove-input artefact (a code cell whose input code is hidden)
-* miscell usual tricks (link to a downloadable file, iframe with some static html, ...)
-* courselevels - mostly deprecated:
-  * using tags to specifiy a level among basic=green, intermediate=blue, advanced=red
-  * also the ability to put a frame around a cell
-* mermaid: some inline (git)graphs using `mermaid.js`
-````
-
-+++
+what we do in this series of sample notebooks, is to summarize most of our common notebook recipes
 
 ````{admonition} for what targets
 :class: seealso
@@ -65,5 +49,11 @@ and check how that renders in the following contexts
 
 * jupyter book output, which is now our primary output medium
 * jlab4, with a cocktail of extensions, at least
-  * `jupytext`, `jupyterlab-myst`, and more optionnally now, `jupyterlab-courselevels`
+  * `jupytext`, `jupyterlab-myst`
 ````
+
++++
+
+## status
+
+not always up to date, particularly in the areas where things no longer evolve much  
