@@ -38,6 +38,7 @@ PROJECT_PATTERNS = [
     "flotpython-exos-python",
     "ue22-p25-frontend",
     "ue22-p25-backend",
+    "flotpython-course",
     "jupyterlab-examples",
 ]
 
