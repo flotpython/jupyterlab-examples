@@ -11,11 +11,16 @@ language_info:
   name: python
   pygments_lexer: ipython3
   nbconvert_exporter: python
+skip_execution: true
+# lite: true
 ---
 
 # Pyodide kernel
 
-![](https://raw.githubusercontent.com/pyodide/pyodide/master/docs/_static/img/pyodide-logo.png)
+```{image} https://raw.githubusercontent.com/pyodide/pyodide/master/docs/_static/img/pyodide-logo.png
+:align: right
+:width: 200px
+```
 
 ```{admonition} Only in jupyterlite
 :class: warning

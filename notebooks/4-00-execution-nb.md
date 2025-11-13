@@ -31,7 +31,17 @@ pros and cons:
 - 1/1 when both are enabled, apparently the build-time execution is done first and the run buttons don't do anything
 - 1/0 if run at build-time, outputs are readily available without any manipulation
 - 0/1 but when interactivity is needed, it's cool to rely on the embedded kernel so that dynamic behaviour like widgets or nbautoeval can be used
-- 0/0 nothing is executed, hardly useful...
+- 0/0 nothing is executed, useful for a small number of static content pieces, having them ig overhead either
+
++++
+
+## recommended setup
+
+- build the project with the `--execute` flag to have outputs available at build-time
+- in some specific notebooks, turn off build-time execution and enable thebe +
+  jupyterlite so that users can re-execute the notebook in the browser
+
+see next notebook for an example of how to do that
 
 +++
 
@@ -55,7 +65,3 @@ in `myst.yml`, add
 ```
 
 that is to say `project.jupyter.lite = true`
-
-## on a notebook basis
-
-not sure if one can enable execution on a per-notebook basis
