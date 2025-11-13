@@ -1,7 +1,7 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: flotpython - examples
+  title: flotpython - examples with jupyterlite
   # I suspect the intention was maybe to use this for the title tooltip ?
   # in any case as of now 2024 june the title is used for the tooltip too (a bit silly)
   # and I can't see where this is used
@@ -13,17 +13,18 @@ project:
   # would be nice if it could be limited to the cover page
   authors:
     - Thierry Parmentelat
-  date: 2025-06-15
+  date: 2025-11-13
   github: https://github.com/flotpython/jupyterlab-examples
   keywords:
     - notebooks
     - MyST
     - Jupyter
-  # bibliography: []
+    - jupyterlite
+# bibliography: []
   settings:
     output_matplotlib_strings: warn
-  # jupyter:
-  #   lite: true
+  jupyter:
+    lite: true
 
 site:
   #template: book-theme
@@ -32,7 +33,7 @@ site:
   # template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
 
   # used in the tab name
-  title: jlab-examples
+  title: jlab examples jlite
   # this would be for the horizontal header bar - not used here (yet)
   # nav: []
   # actions:
@@ -43,7 +44,7 @@ site:
     favicon: media/flotpython-favicon.svg.ico
     logo: media/flotpython-favicon.svg
     # very visible in the header
-    logo_text: "flotpython: jlab examples"
+    logo_text: With jupyter.lite = true
     style: "_static/style.css"
     folders: true
 
