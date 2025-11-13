@@ -24,19 +24,19 @@ mostly all repos have moved to jb2 as of now
   }
 </style>
 
-|                  course |     orga     |         tool          | comment |                                             URL |
-|------------------------:|:------------:|:---------------------:|:-------:|------------------------------------------------:|
-|                 `intro` |  `ue12-p25`  | astro + <br>starlight |  done   |                 https://intro.info-mines.paris/ |
-|             `numerique` |  `ue12-p25`  |          jb2          |  done   |             https://numerique.info-mines.paris/ |
-|        `numerique-exos` | `flotpython` |          jb2          |  done   |        https://numerique-exos.info-mines.paris/ |
-|                `slides` | `flotpython` |          jb2          |  done   |                https://python.info-mines.paris/ |
-|           `python-exos` | `flotpython` |          jb2          |  done   |           https://python-exos.info-mines.paris/ |
-|                   `git` |  `ue12-p25`  |          jb2          |  done   |                   https://git.info-mines.paris/ |
-|              `frontend` |  `ue22-p25`  |          jb2          |  done   |              https://frontend.info-mines.paris/ |
-|               `backend` |  `ue22-p25`  |          jb2          |  done   |               https://backend.info-mines.paris/ |
-| `backend-fastapi-notes` |  `ue22-p25`  | next + <br> codehike  |  done   | https://backend-fastapi-notes.info-mines.paris/ |
-| `backend-flask-chatapp` |  `ue22-p25`  | next + <br> codehike  |  done   | https://backend-flask-chatapp.info-mines.paris/ |
-|   `jupyterlab-examples` | `flotpython` |          jb2          |  done   |   https://jupyterlab-examples.info-mines.paris/ |
+|                  course |     orga     |         tool          |     comment      |                                             URL |
+|------------------------:|:------------:|:---------------------:|:----------------:|------------------------------------------------:|
+|                 `intro` |  `ue12-p25`  | astro + <br>starlight |       done       |                 https://intro.info-mines.paris/ |
+|             `numerique` |  `ue12-p25`  |          jb2          |       done       |             https://numerique.info-mines.paris/ |
+|        `numerique-exos` | `flotpython` |          jb2          |       done       |        https://numerique-exos.info-mines.paris/ |
+|                `slides` | `flotpython` |          jb2          | done <br> no PDF |                https://python.info-mines.paris/ |
+|           `python-exos` | `flotpython` |          jb2          |       done       |           https://python-exos.info-mines.paris/ |
+|                   `git` |  `ue12-p25`  |          jb2          |       done       |                   https://git.info-mines.paris/ |
+|              `frontend` |  `ue22-p25`  |          jb2          |       done       |              https://frontend.info-mines.paris/ |
+|               `backend` |  `ue22-p25`  |          jb2          |       done       |               https://backend.info-mines.paris/ |
+| `backend-fastapi-notes` |  `ue22-p25`  | next + <br> codehike  |       done       | https://backend-fastapi-notes.info-mines.paris/ |
+| `backend-flask-chatapp` |  `ue22-p25`  | next + <br> codehike  |       done       | https://backend-flask-chatapp.info-mines.paris/ |
+|   `jupyterlab-examples` | `flotpython` |          jb2          |       done       |   https://jupyterlab-examples.info-mines.paris/ |
 
 let's summarize the pain points
 
@@ -47,6 +47,11 @@ let's summarize the pain points
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2318)](https://github.com/jupyter-book/mystmd/issues/2318)
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2319)](https://github.com/jupyter-book/mystmd/issues/2319)
+
++ issue to open about thebe buttons that behave real odd
+
+[![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2392)](https://github.com/jupyter-book/mystmd/issues/2392)
+
 
 ### ipywidgets
 
@@ -81,6 +86,9 @@ for a new scheme to expose built-in themes as GH releases
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2317)](https://github.com/jupyter-book/mystmd/issues/2317)
 
+[![Issue Status](https://img.shields.io/github/pulls/detail/state/jupyter-book/mystmd/2344)](https://github.com/jupyter-book/mystmd/issues/2344)
+[![Issue Status](https://img.shields.io/github/pulls/detail/state/jupyter-book/myst-theme/659)](https://github.com/jupyter-book/myst-theme/issues/659)
+
 ## favicons
 
 used a workaround which is to use .ico files instead of .svg
@@ -90,7 +98,6 @@ that was only about using .ico format I believe
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/925)](https://github.com/jupyter-book/mystmd/issues/925) -->
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/1985)](https://github.com/jupyter-book/mystmd/issues/1985)
-
 
 ## badges
 
