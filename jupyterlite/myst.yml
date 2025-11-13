@@ -28,6 +28,8 @@ site:
   # actions:
   #   - title: Learn More
   #     url: https://mystmd.org/guide
+  options:
+    logo_text: With jupyter.lite = true
 
 extends:
   - myst-toc.yml
