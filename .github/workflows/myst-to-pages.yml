@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 24
       - name: Install MyST Markdown
-        run: npm install -g mystmd
+        run: npm install -g mystmd thebe-core thebe thebe-lite
       - name: Install requirements.txt
         run: "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
       - name: Build HTML Assets
