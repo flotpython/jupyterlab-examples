@@ -11,9 +11,9 @@ language_info:
   name: python
   nbconvert_exporter: python
   pygments_lexer: ipython3
+title: images and figures
+short_title: images
 ---
-
-# images
 
 ```{code-cell} ipython3
 # but first one code cell and its rendering
