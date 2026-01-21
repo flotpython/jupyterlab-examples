@@ -18,7 +18,7 @@ skip_execution: true
 # Pyodide kernel
 
 ```{image} https://raw.githubusercontent.com/pyodide/pyodide/master/docs/_static/img/pyodide-logo.png
-:align: right
+:align: center
 :width: 200px
 ```
 
@@ -31,14 +31,11 @@ but only in the browser in jupyterlite
 any attempt to execute it in a regular jupyter environment will likely fail
 ```
 
+## Display
+
 ```{code-cell} ipython3
-try:
-  import pyodide_kernel
-except ImportError:
-  print("This notebook is meant to be run in jupyterlite only !!!")
-  print("make sure you run myst **without** the --execute flag !")
-  print("Skipping execution of the rest of the notebook")
-  raise
+from IPython.display import HTML, JSON, Latex, Markdown
+print("Imports successful")
 ```
 
 ## kernel version
@@ -47,14 +44,7 @@ except ImportError:
 :tags: [raises-exception]
 
 import pyodide_kernel
-
 pyodide_kernel.__version__
-```
-
-## Display
-
-```{code-cell} ipython3
-from IPython.display import HTML, JSON, Latex, Markdown
 ```
 
 ### HTML
@@ -74,6 +64,8 @@ print("After display")
 
 ### Markdown
 
+not exactly what one would expect yet
+
 ```{code-cell} ipython3
 Markdown(
     """
@@ -81,7 +73,7 @@ Markdown(
 
 **in bold**
 
-~~Strikthrough~~
+~~Strikethrough~~
 """
 )
 ```
