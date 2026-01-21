@@ -43,3 +43,6 @@ project:
     - title: setup
       children:
         - pattern: 6-[0-9]*
+    - title: slugs
+      children:
+        - pattern: f1/*.md
