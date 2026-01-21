@@ -69,6 +69,12 @@ this is a problem for - at least - embedded HTML pages like folium-generated map
 
 [https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113](https://github.com/jupyter-book/mystmd/issues/189#issuecomment-2725195113)
 
+other relevant entries
+- https://github.com/jupyter-book/mystmd/issues/1921  
+  and more specifically https://github.com/jupyter-book/mystmd/issues/1921#issuecomment-3434122417
+- https://github.com/jupyter-book/mystmd/issues/1196
+- https://github.com/jupyter-book/mystmd/pull/2597
+
 ## slug-ed URLs
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2316)](https://github.com/jupyter-book/mystmd/issues/2316)
@@ -77,17 +83,15 @@ this is a problem for - at least - embedded HTML pages like folium-generated map
 
 - there remains an issue with **hidden content being searchable**; see  
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2312)](https://github.com/jupyter-book/mystmd/issues/2312)
-- the `hidden` flag now works as expected
-- currently relying on tampermonkey on an individual basis, but using a custom theme could be the way to go do make it widely available
+- currently the trick for teachers to display corrections is relying on **`tampermonkey`** on an individual basis  
+  using our custom theme could be the way to go do make it more widely available
 
 ## custom themes
 
 for a new scheme to expose built-in themes as GH releases
 
-[![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2317)](https://github.com/jupyter-book/mystmd/issues/2317)
-
-[![Issue Status](https://img.shields.io/github/pulls/detail/state/jupyter-book/mystmd/2344)](https://github.com/jupyter-book/mystmd/issues/2344)
-[![Issue Status](https://img.shields.io/github/pulls/detail/state/jupyter-book/myst-theme/659)](https://github.com/jupyter-book/myst-theme/issues/659)
+- [![Issue Status](https://img.shields.io/github/pulls/detail/state/jupyter-book/myst-theme/659)](https://github.com/jupyter-book/myst-theme/issues/659)
+- [![Issue Status](https://img.shields.io/github/pulls/detail/state/jupyter-book/myst-enhancement-proposals/34)](https://github.com/jupyter-book/myst-enhancement-proposals/issues/34)
 
 ## favicons
 
