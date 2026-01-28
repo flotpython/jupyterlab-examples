@@ -9,13 +9,14 @@ RUN true \
 && true
 
 # Explicitly set UID/GID to 1001 to match GitHub Runner
-RUN groupadd -g 1001 build && \
-    useradd -m -u 1001 -g 1001 -s /bin/bash build && \
-    echo "build ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# this means the github-actions user in the host must have this uid/gid as well
+RUN groupadd -g 1001 github-actions && \
+    useradd -m -u 1001 -g 1001 -s /bin/bash github-actions && \
+    echo "github-actions ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-WORKDIR /home/build/project
+WORKDIR /home/github-actions/project
 
-RUN chown build:build /home/build
+RUN chown github-actions:github-actions /home/github-actions
 
 # 4. Switch to the non-root user
-USER build
+USER github-actions
