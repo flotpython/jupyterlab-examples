@@ -1,0 +1,19 @@
+[Unit]
+Description=GitHub Actions Runner (%i)
+After=network.target
+
+[Service]
+Type=simple
+User=github-actions
+# %i will be replaced by the name you provide (e.g., ue22-p25)
+WorkingDirectory=/containers/github-actions/github-actions-runner-%i
+ExecStart=/containers/github-actions/github-actions-runner-%i/run.sh
+Restart=always
+RestartSec=10
+
+# Security hardening
+PrivateTmp=yes
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target
