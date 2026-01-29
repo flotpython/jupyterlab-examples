@@ -4,7 +4,7 @@ RUN true \
 && apt-get update \
 && apt-get install -y python3 python3-pip python3-venv \
 && apt-get install -y nodejs npm \
-&& apt-get install -y iproute2 \
+&& apt-get install -y iproute2 sudo \
 && rm -rf /var/lib/apt/lists/* \
 && true
 

@@ -30,7 +30,7 @@ mostly all repos have moved to jb2 as of now
 |             `numerique` |  `ue12-p25`  |          jb2          |       done       |             https://numerique.info-mines.paris/ |                |
 |        `numerique-exos` | `flotpython` |          jb2          |       done       |        https://numerique-exos.info-mines.paris/ |                |
 |                `slides` | `flotpython` |          jb2          | done <br> no PDF |                https://python.info-mines.paris/ |                |
-|           `python-exos` | `flotpython` |          jb2          |       done       |           https://python-exos.info-mines.paris/ |                |
+|           `python-exos` | `flotpython` |          jb2          |       done       |           https://python-exos.info-mines.paris/ | yes            |
 |                   `git` |  `ue12-p25`  |          jb2          |       done       |                   https://git.info-mines.paris/ |                |
 |              `frontend` |  `ue22-p25`  |          jb2          |       done       |              https://frontend.info-mines.paris/ | yes            |
 |               `backend` |  `ue22-p25`  |          jb2          |       done       |               https://backend.info-mines.paris/ |                |
