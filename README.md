@@ -24,19 +24,20 @@ mostly all repos have moved to jb2 as of now
   }
 </style>
 
-|                  course |     orga     |         tool          |     comment      |                                             URL |
-|------------------------:|:------------:|:---------------------:|:----------------:|------------------------------------------------:|
-|                 `intro` |  `ue12-p25`  | astro + <br>starlight |       done       |                 https://intro.info-mines.paris/ |
-|             `numerique` |  `ue12-p25`  |          jb2          |       done       |             https://numerique.info-mines.paris/ |
-|        `numerique-exos` | `flotpython` |          jb2          |       done       |        https://numerique-exos.info-mines.paris/ |
-|                `slides` | `flotpython` |          jb2          | done <br> no PDF |                https://python.info-mines.paris/ |
-|           `python-exos` | `flotpython` |          jb2          |       done       |           https://python-exos.info-mines.paris/ |
-|                   `git` |  `ue12-p25`  |          jb2          |       done       |                   https://git.info-mines.paris/ |
-|              `frontend` |  `ue22-p25`  |          jb2          |       done       |              https://frontend.info-mines.paris/ |
-|               `backend` |  `ue22-p25`  |          jb2          |       done       |               https://backend.info-mines.paris/ |
-| `backend-fastapi-notes` |  `ue22-p25`  | next + <br> codehike  |       done       | https://backend-fastapi-notes.info-mines.paris/ |
-| `backend-flask-chatapp` |  `ue22-p25`  | next + <br> codehike  |       done       | https://backend-flask-chatapp.info-mines.paris/ |
-|   `jupyterlab-examples` | `flotpython` |          jb2          |       done       |   https://jupyterlab-examples.info-mines.paris/ |
+|                  course |     orga     |         tool          |     comment      |                                             URL | self<br>hosted |
+|------------------------:|:------------:|:---------------------:|:----------------:|------------------------------------------------:|----------------|
+|                 `intro` |  `ue12-p25`  | astro + <br>starlight |       done       |                 https://intro.info-mines.paris/ |                |
+|             `numerique` |  `ue12-p25`  |          jb2          |       done       |             https://numerique.info-mines.paris/ |                |
+|        `numerique-exos` | `flotpython` |          jb2          |       done       |        https://numerique-exos.info-mines.paris/ |                |
+|                `slides` | `flotpython` |          jb2          | done <br> no PDF |                https://python.info-mines.paris/ |                |
+|           `python-exos` | `flotpython` |          jb2          |       done       |           https://python-exos.info-mines.paris/ |                |
+|                   `git` |  `ue12-p25`  |          jb2          |       done       |                   https://git.info-mines.paris/ |                |
+|              `frontend` |  `ue22-p25`  |          jb2          |       done       |              https://frontend.info-mines.paris/ | yes            |
+|               `backend` |  `ue22-p25`  |          jb2          |       done       |               https://backend.info-mines.paris/ |                |
+| `backend-fastapi-notes` |  `ue22-p25`  | next + <br> codehike  |       done       | https://backend-fastapi-notes.info-mines.paris/ |                |
+| `backend-flask-chatapp` |  `ue22-p25`  | next + <br> codehike  |       done       | https://backend-flask-chatapp.info-mines.paris/ |                |
+|   `jupyterlab-examples` | `flotpython` |          jb2          |       done       |   https://jupyterlab-examples.info-mines.paris/ | yes            |
+|         MOOC (`course`) | `flotpython` |          jb2          |       done       |           https://mooc-python.info-mines.paris/ | yes            |
 
 let's summarize the pain points
 
