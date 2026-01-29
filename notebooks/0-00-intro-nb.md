@@ -21,8 +21,7 @@ we're testing **jupyterlab**, together with rendering under **jupyter-book v2** 
 
 ## published on `info-mines.paris`
 
-[![the badge](https://github.com/flotpython/jupyterlab-examples/actions/workflows/myst-to-pages.yml/badge.svg)
-on https://jupyterlab-examples.info-mines.paris](jupyterlab-examples.info-mines.paris)
+[![the badge](https://github.com/flotpython/jupyterlab-examples/actions/workflows/myst-to-pages.yml/badge.svg)](https://github.com/flotpython/jupyterlab-examples/actions/workflows/myst-to-pages.yml) -> [https://jupyterlab-examples.info-mines.paris](https://jupyterlab-examples.info-mines.paris)
 
 :::{admonition} and the jb1 version on `readthedocs.io`
 :class: dropdown warning
