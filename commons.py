@@ -496,6 +496,32 @@ def git_add(common, dry_run, interactive):
 
 
 @commons_cli.command()
+@click.argument('common', metavar='common', envvar="COMMON", nargs=1, type=str, required=False)
+def git_diff(common):
+    """
+    run git diff in all projects that have that common file - requires exactly one argument
+    """
+    # transform str into Common object
+    common = common_of_interest(common)
+    projects = sorted(common.list_projects())
+    for project in projects:
+        file = common.locate_in_project(project)
+        if not file:
+            print(f"OOPS - {file} not found in {project}")
+            continue
+        print(f"{20*'-'} {project}")
+        if not file.has_pending_changes('worktree'):
+            print(f"skipping project {project} - no pending changes in {common}")
+            continue
+        print(f"{10*'-'} unstaged")
+        command = f"git -C {COMMON_ROOT / project} diff {file.path_in_project()}"
+        run_commands([command], dry_run=False, interactive=False)
+        print(f"{10*'-'} staged")
+        command = f"git -C {COMMON_ROOT / project} diff --cached {file.path_in_project()}"
+        run_commands([command], dry_run=False, interactive=False)
+
+
+@commons_cli.command()
 @click.option('-n', '--dry-run/--no-dry-run', is_flag=True, default=False, help='Dry run')
 @click.option('-i', '--interactive/--no-interactive', is_flag=True, default=True,
               help='prompts before copying into each project')
