@@ -62,6 +62,8 @@ COMMONS = [
     # no longer useful with this file as we focus on a specific set of projects
     # plus, this is changing with pyproject.toml
     # 'Makefile.pypi',
+    "myst.yml",
+    "myst-to-pages.yml",
 ]
 
 COMMON_ROOT = Path.home() / 'git/'
