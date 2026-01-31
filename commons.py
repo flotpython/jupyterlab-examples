@@ -276,14 +276,20 @@ class Common:
     def diff(self, rank):
         """
         runs diffs between most recent and previous versions of a common file
+
+        if rank is 0, then show all diffs between 0-th and the others
         """
         if self.is_ok():
             # print("NO DIFF - common file is consistent across all projects")
             return
         keys = list(self.groups.keys())
-        file0 = self.groups[keys[0]][0]
-        file1 = self.groups[keys[rank]][0]
-        print(f"diff {file0.short()} {file1.short()}")
+        ref_index = 0
+        compare_indexes = [rank] if rank != 0 else range(1, len(self.groups))
+        print (list(compare_indexes))
+        for compare_index in compare_indexes:
+            file0 = self.groups[keys[ref_index]][0]
+            file1 = self.groups[keys[compare_index]][0]
+            print(banner(f"diff {file0.short()} {file1.short()}"))
         os.system(f"diff {file0.path} {file1.path}")
 
 
@@ -417,7 +423,7 @@ def summary(commons, quiet):
 
 
 @commons_cli.command()
-@click.option('-r', '--rank', default=1, help='Rank of the group to compare with')
+@click.option('-r', '--rank', default=1, help='Rank of the group to compare with - rank=0 means compare with all variants')
 @click.argument('commons', metavar='common', envvar="COMMONS", nargs=-1, type=str)
 def diff(commons, rank):
     """
