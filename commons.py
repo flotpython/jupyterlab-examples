@@ -230,14 +230,16 @@ class Common:
         return sum(len(files) for files in self.groups.values())
 
 
-    def files(self, relative):
+    def files(self, relative, all=False):
         """
         prints on stdout the filename for one sample of each group
         if relative is True, the filename is relative to COMMON_ROOT
         """
         for _group, files in self.groups.items():
-            file = files[0]
-            print(file.path.relative_to(COMMON_ROOT) if relative else file.path)
+            if not all:
+                files = [files[0]]
+            for file in files:
+                print(file.path.relative_to(COMMON_ROOT) if relative else file.path)
 
 
     def summary(self):
@@ -377,12 +379,14 @@ def list_projects(commons, aggregate):
 
 @commons_cli.command()
 @click.option('-r', '--relative', is_flag=True, help='Display relative paths only')
+@click.option('-a', '--all', is_flag=True, help='show all files, not just one per group')
 @click.option('-v', '--verbose', is_flag=True, help='show commons names')
 @click.argument('commons', metavar='common', envvar="COMMONS", nargs=-1, type=str)
-def samples(commons, relative, verbose):
+def samples(commons, relative, all, verbose):
     """
-    for each mentioned common file, lists one file per group
-    with --relative, the filename is relative to COMMON_ROOT
+    for each mentioned common file, lists one file per group;
+    with --relative, the filename is relative to COMMON_ROOT;
+    with --all, lists all files, not just one per group
 
     if no common file is mentioned, all known common files are processed
     """
@@ -390,7 +394,7 @@ def samples(commons, relative, verbose):
     for common_obj in commons:
         if verbose:
             print(f"{4*'-'} {common_obj.common}")
-        common_obj.files(relative=relative)
+        common_obj.files(relative=relative, all=all)
 
 
 
