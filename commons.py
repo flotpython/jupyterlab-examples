@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python -u
 
 """
 a tool to monitor projects that follow the guidelines in this project
@@ -18,7 +18,22 @@ from colorama import Fore, Style
 # my first time with click
 import click
 
-colorama.init()
+colorama.init(strip=False)
+
+def wrap(message, fore_color):
+    return f"{fore_color}{message}{Style.RESET_ALL}"
+
+def red(x): return wrap(x, Fore.RED)
+def green(x): return wrap(x, Fore.GREEN)
+def blue(x): return wrap(x, Fore.BLUE)
+def yellow(x): return wrap(x, Fore.YELLOW)
+
+def banner(file, color=yellow, n=10):
+    return color(
+        f"{n*'='}"
+        " "
+        f"{file}"
+    )
 
 @click.group()
 # @click.option('--debug/--no-debug', default=False)
@@ -78,12 +93,12 @@ def run_commands(commands, *, dry_run=False, interactive=False):
     """
     for command in commands:
         if dry_run:
-            print(f"DRY RUN: {command}")
+            print(yellow(f"DRY RUN: {command}"))
             continue
         if interactive:
             answer = input(f"{command} - OK [y/N] ? ")
             if answer.lower() not in ['y', 'yes']:
-                print("skipping")
+                print(red("skipping"))
                 continue
         os.system(command)
 
@@ -95,7 +110,9 @@ def spot_common(seed):
     for common in COMMONS:
         if seed in common:
             return common
-    print(f"WARNING: could not spot a common file with seed {seed}, using it verbatim", file=sys.stderr)
+    print(banner(
+        f"WARNING: could not spot a common file with seed {seed}, using it verbatim"),
+        file=sys.stderr)
     return seed
 
 
@@ -254,7 +271,7 @@ class Common:
 
         color = Fore.GREEN if self.is_ok() else Fore.RED
 
-        print(f"{self.common} has {self.nb_files()} instances in {self.nb_groups()} groups")
+        print(yellow(f"{self.common} has {self.nb_files()} instances in {self.nb_groups()} groups"))
         for group, files in self.groups.items():
             print(f"Group {group}")
             for file in files:
@@ -280,7 +297,7 @@ class Common:
         if rank is 0, then show all diffs between 0-th and the others
         """
         if self.is_ok():
-            # print("NO DIFF - common file is consistent across all projects")
+            print("NO DIFF - common file is consistent across all projects", file=sys.stderr)
             return
         keys = list(self.groups.keys())
         ref_index = 0
@@ -290,7 +307,7 @@ class Common:
             file0 = self.groups[keys[ref_index]][0]
             file1 = self.groups[keys[compare_index]][0]
             print(banner(f"diff {file0.short()} {file1.short()}"))
-        os.system(f"diff {file0.path} {file1.path}")
+            os.system(f"diff {file0.path} {file1.path}")
 
 
     def adopt(self, rank, dry_run, interactive):
@@ -344,7 +361,7 @@ def commons_of_interest(commons):
     if not commons:
         env = os.getenv("COMMON")
         if env:
-            print(f"using COMMON environment variable {env}")
+            print(yellow(f"using COMMON environment variable {env}"))
             commons = env.split()
         else:
             commons = COMMONS
@@ -359,7 +376,7 @@ def common_of_interest(common):
     if not common:
         env = os.getenv("COMMON")
         if env:
-            print(f"using COMMON environment variable {env}")
+            print(yellow(f"using COMMON environment variable {env}"))
             common = env
         else:
             common = COMMONS[0]
@@ -379,7 +396,9 @@ def list_projects(commons, aggregate):
         projects = common.list_projects()
         aggregated_projects.update(projects)
         if not aggregate:
-            print(f"{4*'-'} {common=}: is found in projects:\n{" ".join(sorted(projects))}")
+            proj_names = " ".join(sorted(projects))
+            print(banner(f"{common=}: is found in projects"))
+            print(proj_names)
     if aggregate:
         print(" ".join(sorted(aggregated_projects)))
 
@@ -401,7 +420,7 @@ def samples(commons, relative, all, verbose):
     commons = commons_of_interest(commons)
     for common_obj in commons:
         if verbose:
-            print(f"{4*'-'} {common_obj.common}")
+            print(banner(common_obj.common, n=4))
         common_obj.files(relative=relative, all=all)
 
 
@@ -417,7 +436,7 @@ def summary(commons, quiet):
     commons = commons_of_interest(commons)
     for common_obj in commons:
         if not quiet or not common_obj.is_ok():
-            print(f"{4*'-'} {common_obj.common}")
+            print(banner(common_obj.common, n=4))
             common_obj.summary()
 
 
@@ -432,7 +451,7 @@ def diff(commons, rank):
     """
     commons = commons_of_interest(commons)
     for common_obj in commons:
-        print(f"{4*'-'} {common_obj.common}")
+        print(banner(common_obj.common, n=4))
         common_obj.diff(rank)
 
 
@@ -450,7 +469,7 @@ def adopt(commons, rank, dry_run, interactive):
     """
     commons = commons_of_interest(commons)
     for common_obj in commons:
-        print(f"{4*'-'} {common_obj.common}")
+        print(banner(common_obj.common, n=4))
         common_obj.adopt(rank, dry_run, interactive)
 
 
@@ -472,7 +491,7 @@ def git_status(commons, verbose):
     projects = sorted(projects)
     depth = 3 if verbose else 1
     for project in projects:
-        print(f"{4*'-'} {project}")
+        print(banner(project))
         os.system(f"git -C {COMMON_ROOT / project} rev-parse --abbrev-ref HEAD")
         os.system(f"git -C {COMMON_ROOT / project} la -{depth}")
         os.system(f"git -C {COMMON_ROOT / project} status --short --untracked-files=no")
@@ -493,12 +512,12 @@ def git_add(common, dry_run, interactive):
     for project in projects:
         file = common.locate_in_project(project)
         if not file:
-            print(f"OOPS - {file} not found in {project}")
+            print(red(f"OOPS - {file} not found in {project}"))
             continue
         if not file.has_pending_changes('worktree'):
-            print(f"skipping project {project} - no pending changes in {common}")
+            print(yellow(f"skipping project {project} - no pending changes in {common}"))
             continue
-        print(f"{4*'-'} {project}")
+        print(banner(project, n=1))
         command = f"git -C {COMMON_ROOT / project} add {file.path_in_project()}"
         run_commands([command], dry_run=dry_run, interactive=interactive)
 
@@ -515,16 +534,16 @@ def git_diff(common):
     for project in projects:
         file = common.locate_in_project(project)
         if not file:
-            print(f"OOPS - {file} not found in {project}")
+            print(red(f"OOPS - {file} not found in {project}"))
             continue
-        print(f"{20*'-'} {project}")
+        print(banner(project, n=10))
         if not file.has_pending_changes('worktree'):
-            print(f"skipping project {project} - no pending changes in {common}")
+            print(yellow(f"skipping project {project} - no pending changes in {common}"))
             continue
-        print(f"{10*'-'} unstaged")
+        print(banner("unstaged", color=red, n=5))
         command = f"git -C {COMMON_ROOT / project} diff {file.path_in_project()}"
         run_commands([command], dry_run=False, interactive=False)
-        print(f"{10*'-'} staged")
+        print(banner("staged", color=greee, n=5))
         command = f"git -C {COMMON_ROOT / project} diff --cached {file.path_in_project()}"
         run_commands([command], dry_run=False, interactive=False)
 
@@ -552,21 +571,21 @@ def git_commit(common, dry_run, interactive, message):
     for project in projects:
         file = common.locate_in_project(project)
         if not file:
-            print(f"OOPS - {file} not found in {project}")
+            print(red(f"OOPS - {file} not found in {project}"))
             continue
         if file.has_pending_changes('worktree'):
-            print(f"WARNING: project {project} "
-                  f"still has pending changes in the worktree !! - skipping")
+            print(yellow(f"WARNING: project {project} "
+                  f"still has pending changes in the worktree !! - skipping"))
             continue
         if not file.has_pending_changes('index'):
-            print(f"skipping project {project} - no pending changes in {common}")
+            print(yellow(f"skipping project {project} - no pending changes in {common}"))
             continue
         if message is not None:
             commit_message = f"'{message}'"
         else:
             commit_message = f"'adopt latest version of {common.common}'"
         command = f"git -C {COMMON_ROOT / project} commit -m{commit_message}"
-        print(f"{4*'-'} {project}")
+        print(banner(project))
         run_commands([command], dry_run=dry_run, interactive=interactive)
 
 
@@ -591,12 +610,12 @@ def git_push(commons, dry_run, interactive, force):
     for project in projects:
         file0 = common0.locate_in_project(project)
         if not file0:
-            print(f"OOPS - {file0} not found in {project}")
+            print(red(f"OOPS - {file0} not found in {project}"))
             continue
         if file0.is_pushed():
-            print(f"skipping project {project} - already pushed")
+            print(yellow(f"skipping project {project} - already pushed"))
             continue
-        print(f"{4*'-'} {project}")
+        print(banner(project))
         force_option = " --force" if force else ""
         command = f"git -C {COMMON_ROOT / project} {force_option} push"
         run_commands([command], dry_run=dry_run, interactive=interactive)
