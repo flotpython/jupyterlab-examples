@@ -527,8 +527,9 @@ def git_diff(common):
 @click.option('-n', '--dry-run/--no-dry-run', is_flag=True, default=False, help='Dry run')
 @click.option('-i', '--interactive/--no-interactive', is_flag=True, default=True,
               help='prompts before copying into each project')
+@click.option('-m', '--message', metavar='message', default=None)
 @click.argument('common', metavar='common', envvar="COMMON", nargs=1, type=str, required=False)
-def git_commit(common, dry_run, interactive):
+def git_commit(common, dry_run, interactive, message):
     """
     performs a git commit in all projects that have that common file - requires exactly one argument
     the message is labelled as 'adopt latest version of <common_file>'
@@ -554,7 +555,10 @@ def git_commit(common, dry_run, interactive):
         if not file.has_pending_changes('index'):
             print(f"skipping project {project} - no pending changes in {common}")
             continue
-        commit_message = f"'adopt latest version of {common.common}'"
+        if message is not None:
+            commit_message = f"'{message}'"
+        else:
+            commit_message = f"'adopt latest version of {common.common}'"
         command = f"git -C {COMMON_ROOT / project} commit -m{commit_message}"
         print(f"{4*'-'} {project}")
         run_commands([command], dry_run=dry_run, interactive=interactive)
