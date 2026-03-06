@@ -7,7 +7,6 @@
 // @grant        none
 // ==/UserScript==
 
-
 const cheatCorrige = () => {
     // open a corrige file which is located under
     // the .teacher folder with an extra "corrige-" suffix
@@ -76,6 +75,7 @@ const init_cheatcodes = () => {
 
     // inject class corrige when relevant
     const outlineCorrige = () => {
+        if (!document.body) return
         if (window.location.href.includes("corrige")) {
             document.body.classList.add("corrige")
         } else {
