@@ -25,6 +25,8 @@ project:
     output_matplotlib_strings: warn
   jupyter:
     lite: true
+  plugins:
+    - https://raw.githubusercontent.com/choldgraf/myst-lightbox/main/src/index.mjs
 
 site:
   #template: book-theme
