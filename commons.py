@@ -53,7 +53,7 @@ PROJECT_PATTERNS = [
     "flotpython-exos-python",
     "ue22-p25-frontend",
     "ue22-p25-backend",
-    "flotpython-course",
+    # "flotpython-course",
     "jupyterlab-examples",
 ]
 
@@ -543,7 +543,7 @@ def git_diff(common):
         print(banner("unstaged", color=red, n=5))
         command = f"git -C {COMMON_ROOT / project} diff {file.path_in_project()}"
         run_commands([command], dry_run=False, interactive=False)
-        print(banner("staged", color=greee, n=5))
+        print(banner("staged", color=green, n=5))
         command = f"git -C {COMMON_ROOT / project} diff --cached {file.path_in_project()}"
         run_commands([command], dry_run=False, interactive=False)
 
