@@ -45,10 +45,10 @@ def commons_cli():
     # pass
 
 PROJECT_PATTERNS = [
-    "ue12-p25-intro",
-    "ue12-p25-numerique",
+    "ue12-p26-intro",
+    "ue12-p26-numerique",
     "flotpython-exos-ds",
-    "ue12-p25-git",
+    "ue12-p26-git",
     "flotpython-slides",
     "flotpython-exos-python",
     "ue22-p25-frontend",
