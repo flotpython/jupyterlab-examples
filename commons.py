@@ -11,6 +11,7 @@ from datetime import datetime as DateTime
 from pathlib import Path
 from collections import defaultdict
 from dataclasses import dataclass
+import subprocess
 
 import colorama
 from colorama import Fore, Style
@@ -100,7 +101,7 @@ def run_commands(commands, *, dry_run=False, interactive=False):
             if answer.lower() not in ['y', 'yes']:
                 print(red("skipping"))
                 continue
-        os.system(command)
+        subprocess.run(command, shell=True, check=True)
 
 
 def spot_common(seed):
@@ -170,7 +171,7 @@ class File:
         dir_ = self.path.parents[0]
         # name = self.path.name
         command = f"git -C {dir_} merge-base --is-ancestor HEAD @{{upstream}}"
-        return os.system(command) == 0
+        return subprocess.run(command, shell=True, check=True) == 0
 
     # fine-grained: check for pending changes in any of the 2 areas (added or not)
     def has_pending_changes(self, area):
@@ -186,7 +187,7 @@ class File:
             command = f"git -C {dir_} diff-index --quiet HEAD {name}"
         elif area == 'worktree':
             command = f"git -C {dir_} diff-files --quiet -- {name}"
-        return os.system(command) != 0
+        return subprocess.run(command, shell=True, check=True) == 0
 
 
 class Common:
@@ -307,7 +308,7 @@ class Common:
             file0 = self.groups[keys[ref_index]][0]
             file1 = self.groups[keys[compare_index]][0]
             print(banner(f"diff {file0.short()} {file1.short()}"))
-            os.system(f"diff {file0.path} {file1.path}")
+            subprocess.run(f"diff {file0.path} {file1.path}", shell=True, check=True)
 
 
     def adopt(self, rank, dry_run, interactive):
@@ -492,9 +493,10 @@ def git_status(commons, verbose):
     depth = 3 if verbose else 1
     for project in projects:
         print(banner(project))
-        os.system(f"git -C {COMMON_ROOT / project} rev-parse --abbrev-ref HEAD")
-        os.system(f"git -C {COMMON_ROOT / project} la -{depth}")
-        os.system(f"git -C {COMMON_ROOT / project} status --short --untracked-files=no")
+        subprocess.run(f"git -C {COMMON_ROOT / project} rev-parse --abbrev-ref HEAD", shell=True, check=True)
+        subprocess.run(f"git -C {COMMON_ROOT / project} la -{depth}", shell=True, check=True)
+        subprocess.run(f"git -C {COMMON_ROOT / project} status --short --untracked-files=no", shell=True, check=True)
+
 
 
 @commons_cli.command()
@@ -619,6 +621,25 @@ def git_push(commons, dry_run, interactive, force):
         force_option = " --force" if force else ""
         command = f"git -C {COMMON_ROOT / project} {force_option} push"
         run_commands([command], dry_run=dry_run, interactive=interactive)
+
+
+@commons_cli.command()
+@click.argument('common', metavar='common', envvar="COMMON", nargs=1, type=str, required=False)
+def actions(common):
+    """
+    lists the URLs of the GitHub actions that are found in the projects that have that common file
+    """
+    common = common_of_interest(common)
+    projects = sorted(common.list_projects())
+    for project in projects:
+        ssh_url = subprocess.check_output(
+            f"git -C {COMMON_ROOT / project} config --get remote.origin.url",
+            shell=True, text=True).strip()
+        url = (ssh_url
+               .replace("git@github.com:", "https://github.com/")
+               .replace(".git", ""))
+        print(f"{url}/actions")
+
 
 
 if __name__ == '__main__':
