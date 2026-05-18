@@ -1,9 +1,9 @@
 # migration to myst / JB2
 
 - [migration to myst / JB2](#migration-to-myst--jb2)
-  - [execution of code cells](#execution-of-code-cells)
-    - [ipywidgets](#ipywidgets)
-  - [nbautoeval (won't work in a static site anyway, unless re-written to use browser-embedded python)](#nbautoeval-wont-work-in-a-static-site-anyway-unless-re-written-to-use-browser-embedded-python)
+  - [execution model](#execution-model)
+    - [interactive outputs / ipywidgets](#interactive-outputs--ipywidgets)
+    - [corollary: nbautoeval](#corollary-nbautoeval)
   - [static stuff](#static-stuff)
   - [slug-ed URLs](#slug-ed-urls)
   - [corrections](#corrections)
@@ -12,6 +12,8 @@
   - [badges](#badges)
   - [styling](#styling)
   - [itables](#itables)
+  - [multi-langs notebook](#multi-langs-notebook)
+  - [config and doc](#config-and-doc)
 
 mostly all repos have moved to jb2 as of now
 
@@ -41,26 +43,51 @@ mostly all repos have moved to jb2 as of now
 
 let's summarize the pain points
 
-## execution of code cells
+## execution model
 
-- we now know how to embed a jupyterlite instance in the page; not clear however
-  how to take advantage of that
+- we now know how to embed a jupyterlite instance in the page; 
+- we know how to skip execution on one specific notebook
+
+however
+- how much sense does it make to execute at build time AND and read-time ?
+- in practical terms one would like to tag notebooks as being either
+  - 1. not executed
+  - 2. executed at build time (for static outputs)
+  - 3. executed at read time (for interactive outputs)
+- currently as far as I understand the only option to mix types 2 and 3 is
+  - run `myst --execute` to execute all notebooks at build time
+  - and tag `skip_execution: true` for the notebooks that should be executed
+    at read time
+  - and also add a jlite kernel in those same notebooks
+
+I'd argue this configuration scheme is suboptimal; I'd rather have a single tag to choose between the 3 options; something like
+
+```yaml
+execution: none | build-time | read-time
+```
+
+with possibly a global tag to select which kind of embedded execution (jlite or binder or whatever) that could also be overridable at the notebook level
 
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2318)](https://github.com/jupyter-book/mystmd/issues/2318)
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2319)](https://github.com/jupyter-book/mystmd/issues/2319)
 
-+ issue to open about thebe buttons that behave real odd
-
 [![Issue Status](https://img.shields.io/github/issues/detail/state/jupyter-book/mystmd/2392)](https://github.com/jupyter-book/mystmd/issues/2392)
 
+### interactive outputs / ipywidgets
 
-### ipywidgets
+loosely related to the above;  
+with a jlite kernel on board one can produce interactive widgets;  
+but is it possible to get the same with build-time execution ?
 
-related to the above; with a jlite kernel on board one can produce interactive widgets; but that seems to exclude a build-time execution ?
+```{note}
+this being said, interactive visualizations was already not working under jb1
+  iirc
+```
 
-## nbautoeval (won't work in a static site anyway, unless re-written to use browser-embedded python)
+### corollary: nbautoeval
 
-- [ ] interactive visualizations (this being said it was already not working under jb1)
+won't work in a static site anyway, unless re-written to use browser-embedded
+python; we need Python to correct the
 
 ## static stuff
 
@@ -126,4 +153,23 @@ we have a common style_jb2.css that takes care of most details; might need some 
 
 ## itables
 
-not quite sure where we are there, we may need to add a recipe notebook in here to assess the situation
+I have a sample notebook in this very repo  
+itables kicks in when the nb is executed at read-time
+
+## multi-langs notebook
+
+in the context of the Rust course, I have tried to mix Python and Rust code in the same notebook
+
+I believe this was working in jb1 ?
+
+in any case when I do:
+- set bash as the default language for the notebook
+- add a regular code cell -> bash of course
+- add a `:::{code-cell} rust` cell : also sent to bash
+
+## config and doc
+
+it is often hard to tell from the doc whether a given setting:
+
+- must be set on the notebook itself and/or the global config
+- and also sometimes at which level of the settings it is supposed to be set - i.e. in the `project` or `site` section of the config ?
