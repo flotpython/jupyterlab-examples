@@ -13,7 +13,7 @@ language_info:
   pygments_lexer: ipython3
 ---
 
-# courselevels (mostly obso)
+# courselevels (obso)
 
 +++
 

@@ -2,6 +2,8 @@
 authors:
 - name: Thomas Parmentier
 - name: Olivier Grisel
+jupyter:
+  lite: false
 jupytext:
   formats: md:myst
   text_representation:
@@ -22,3 +24,6 @@ language_info:
 +++
 
 we just want to play with the ability to override some project settings on an individual notebook without impacting the other ones
+
+- here the authors are custom;   
+- not been able to turn off jlite though..

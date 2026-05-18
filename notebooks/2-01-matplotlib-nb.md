@@ -36,16 +36,16 @@ Y = np.sin(X)
 * so I will settle on using `%matplotlib ipympl`
   which actually sounds like an alias for `widget` but works better in vs-code  
 
-  **note** that either `notebook` or `ipympl` requires `pip install ipympl`  
+  **note** that either `widget` or `ipympl` requires `pip install ipympl`  
   this module is also sometimes referred to as `jupyterlab-matplotlib`
 
 ```{code-cell} ipython3
 # this produces an interactive plot under jupyter lab
 # with jupyter book, it should also be interactive (and it was working at some point)
 # but as of Apr 2024 at least, if we keep %matplotlib ipympl we do not get any plot - not even a static one
-# 
+#
 # of potential interest:
-# 
+#
 # https://github.com/executablebooks/jupyter-book/issues/1053
 # https://github.com/executablebooks/jupyter-book/issues/1991
 # https://jupyterbook.org/en/stable/advanced/sphinx.html#custom-css-or-javascript

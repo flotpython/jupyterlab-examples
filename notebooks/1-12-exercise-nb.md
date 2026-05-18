@@ -17,25 +17,7 @@ language_info:
 
 +++
 
-````{warning}
-this requires to have
-
-* ```bash
-  pip install sphinx-exercise
-  ```
-
-* **and** `sphinx_exercise` in `_config.yml` like so
-  ```yaml
-  sphinx:
-    extra_extensions:
-      sphinx_exercise
-  ```
-````
-
-+++
-
 see all options in <https://mystmd.org/guide/exercises>  
-as well as <https://ebp-sphinx-exercise.readthedocs.io/en/latest/syntax.html>
 
 in particular there is a `hidden` attribute that may come in handy but I have not explored in depth yet
 
@@ -43,10 +25,10 @@ in particular there is a `hidden` attribute that may come in handy but I have no
 
 ## native MyST exercise
 
-+++
-
 here's a sample
 
+`````{myst}
+
 ````{exercise} the header
 :label: exo-label
 
@@ -57,64 +39,29 @@ class Foo:
     pass
 ```
 ````
-
-+++
-
-``````{admonition} the code for this output
-:class: dropdown
-
-`````{code-block}
-````{exercise} the header
-:label: exo-label
-
-the question; the dropdown class works too if needed
-```{code-block}
-# of course one can insert code in the body
-class Foo:
-    pass
-```
 `````
-``````
 
 +++
 
-## native MyST solution
+### native MyST solution
 
-here's a sample solution for the above exercise
+here's a sample solution for the above exercise; the error here seems to be an
+artefact of using the `myst` directive, but the syntax is correct, and the
+`exo-label`link would point back to the exercise
 
-+++
-
+`````{myst}
 ````{solution} exo-label
-:class: dropdown
 :label: sol-label
+:class: dropdown
 
 the solution
 ```{code-block} python
-one can use ```{code-block} to insert code
-def fact(n):
-    pass
-```
-````
-
-+++
-
-``````{admonition} the code for this output
-:class: dropdown
-
-`````{code-block}
-````{solution} exo-label
-:class: dropdown
-:label: sol-label
-
-the solution
-```{code-block} python
-one can use ```{code-block} to insert code
+:linenos: true
 def fact(n):
     pass
 ```
 ````
 `````
-``````
 
 +++
 
@@ -133,7 +80,71 @@ see also an alternative syntax based on `solution-start` / `solution-end` in
 
 +++
 
-## without this feature
+## hidden exercise and solution
+
+### none hidden
+
+```{exercise} none hidden
+:label: exo-none-hidden
+the question in the `exo-none-hidden` exercise
+
+it's a good idea to then mention [a link to the solution](#sol-none-hidden) in the question,
+as otherwise it might be hard to find  
+also note the solution can be in another notebook entirely, if that helps
+
+```
+
+```{solution} none hidden
+:label: sol-none-hidden
+the solution to the `exo-none-hidden` exercise
+```
+
+### hidden solution
+
+```{exercise} hidden solution
+:label: exo-hidden-solution
+
+the question in the `exo-hidden-solution` exercise
+```
+
+```{solution} exo-hidden-solution
+:label: sol-hidden-solution
+:hidden: true
+
+the solution to the `exo-hidden-solution` exercise
+```
+
+### hidden exercise
+
+```{exercise} hidden exercise
+:label: exo-hidden-exercise
+:hidden: true
+
+the question in the `exo-hidden-exercise` exercise
+```
+
+```{solution} exo-hidden-exercise
+:label: sol-hidden-exercise
+the solution to the `exo-hidden-exercise` exercise
+```
+
+### both hidden
+
+```{exercise} both hidden
+:label: exo-both-hidden
+:hidden: true
+the question in the `exo-both-hidden` exercise
+```
+
+```{solution} exo-both-hidden
+:label: sol-both-hidden
+:hidden: true
+the solution to the `exo-both-hidden` exercise
+```
+
++++
+
+## before this feature
 
 before that we have used an admonition with a `seealso` class
 

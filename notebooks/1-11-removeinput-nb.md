@@ -15,13 +15,12 @@ language_info:
 
 # remove-in/output
 
-these 2 tags (`remove-input` and `remove-output`) are effective ***on code cells only***
+the tags `remove-input` - `remove-output` - `remove-cell` are effective ***on code cells only***  
+the feature is activated through the code cell's `metadata.tags
 
-the feature is activated through the code cell's `metadata.tags` that contain `remove-input` or remove-output`
-
-## textual input
-
-here's the textual input for the first cell below
+using the `myst` directive did not pan out here...  
+here's the textual input for the first cell below  
+the other two have a similar content, but for the tag
 
 ````text
 ```{code-cell} ipython3
@@ -30,7 +29,9 @@ print("with remove-input we show the output but not the code")
 ```
 ````
 
-## `remove-input`
+---
+
+## setting the `remove-input` tag
 
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 1 remove-input code cell below
 
@@ -41,7 +42,9 @@ print("with remove-input we show the output but not the code")
 
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ hide-input cell above
 
-## `remove-output`
+---
+
+## setting the `remove-output` tag
 
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 1 remove-output code cell below
 
@@ -52,7 +55,9 @@ print("this time we see the code and not the output")
 
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ remove-output cell above
 
-## `remove-cell`
+---
+
+## setting the `remove-cell` tag
 
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 1 remove-cell code cell below
 
@@ -64,4 +69,3 @@ print("should show the code but not the output")
 ```
 
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ remove-cell cell above
-

@@ -2,4 +2,4 @@ _build/
 .ipynb_checkpoints/
 __pycache__/
 .macnb/
-
+node_modules/

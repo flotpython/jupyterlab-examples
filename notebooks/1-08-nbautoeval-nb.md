@@ -19,4 +19,10 @@ language_info:
 
 ## not working in a static site
 
+this add-on is about auto-corrected exercises; the student is asked to write a
+Python class or function, and the add-on checks the output against expected
+output, and gives feedback
+
+of course this cannot run naively in a static site
+
 see [another attempt in the execution section](label-nbautoeval-dynamic) for other angles

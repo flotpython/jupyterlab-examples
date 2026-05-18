@@ -54,46 +54,58 @@ IFrame(
 )
 ```
 
-## local video: use ipywidgets's Video()
++++
 
-for a local video - source needs to be put under `_static`
+## using mystmd's directives
+
+### remote with `iframe`
+
+using the `iframe` myst directive
+
+````{myst}
+```{iframe} https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0
+
+works in both jlab and jb2
+```
+````
+
++++
+
+### local with `figure` - under media/
+
+using the `figure` myst directive
+
+```{figure} media/under-media.mp4
+:width: 200px
+:height: 200px
+this works in mystmd/jb2 (only in autoplay), but not in jlab
+```
+
++++
+
+### local with `figure` - under `_static`
+
+using the `figure` myst directive again
+
+```{figure} _static/under-static.mp4
+:width: 200px
+:height: 200px
+this works in mystmd/jb2 (only in autoplay), but not in jlab
+```
+
++++
+
+## using ipywidgets's Video() is broken
+
+````{admonition} for the record only
+:class: danger
+
+this is no longer working with MystMD, b/c of ipywidgets limitations !
+````
 
 ```{code-cell} ipython3
 # same as above, you can use `remove-input` to hide the code
 
 from ipywidgets import Video
 Video.from_file("_static/under-static.mp4", autoplay=False, width='800px')
-```
-
-## using mystmd recipe
-
-+++
-
-### remote - youtube
-
-using the `iframe` myst directive
-
-```{iframe} https://www.youtube.com/embed/i_ZcP7iNw-U?rel=0&amp;controls=0
-
-works in both jlab and jb2
-```
-
-+++
-
-### local (and not under `_static`)
-
-using the `figure` myst directive
-
-```{figure} media/under-media.mp4
-this works in mystmd/jb2 (only in autoplay), but not in jlab
-```
-
-+++
-
-### local (and under `_static`)
-
-using the `figure` myst directive again
-
-```{figure} _static/under-static.mp4
-this works in mystmd/jb2 (only in autoplay), but not in jlab
 ```

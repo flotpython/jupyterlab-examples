@@ -24,15 +24,19 @@ this requires extra config, search for `dollarmath`
 same for latex-math inline $\forall x\in \mathbb{C}$ like this,  
 or double-dollars like that
 
+````{myst}
 $$
 \forall x\in \mathbb{C}
 $$
+````
 
 or with a `{math}` directive
 
+````{myst}
 ```{math}
 \exists y \in \mathbb{R}
 ```
+````
 
 +++
 
@@ -40,11 +44,11 @@ or with a `{math}` directive
 
 ### pure markdown with double tildes
 
+````{myst}
 ```markdown
 ~~so that one can see text in strikethrough mode~~
 ```
-
-it renders as : ~~so that one can see text in strikethrough mode~~
+````
 
 well this one is a bit disappointing, no longer works in either jlab or mystmd
 as of 2025 march.. (it used to require  an extra step **in the sphinx config**)
@@ -53,21 +57,19 @@ as of 2025 march.. (it used to require  an extra step **in the sphinx config**)
 
 note that one can also use a MyST role, and that now works in both jlab and mystmd
 
-```markdown
+````{myst}
 {strike}`so that one can see text in strikethrough mode`
-```
+````
 
-it renders: {strike}`so that one can see text in strikethrough mode`
+:::::{note} for striking `a piece of text`
 
-**NOTE** for striking `a piece of text`, we can use
+we can use the following syntax;
+not quite sure about the `del` *vs* `strike` thing though
 
-```markdown
+```{myst}
 {del}`` `a piece of text` ``
 ```
-
-which renders as {del}`` `a piece of text` ``
-
-not quite sure about the `del` *vs* `strike` thing though
+:::::
 
 +++
 
@@ -76,11 +78,9 @@ not quite sure about the `del` *vs* `strike` thing though
 mostly we use this to create a link to download an exercise as a zip -- 
 heavily used in `flotpython-exos`
 
-```markdown
+```{myst}
 {download}`commencez par télécharger le zip<./downloadable.zip>`
 ```
-
-{download}`commencez par télécharger le zip<./downloadable.zip>`
 
 +++
 

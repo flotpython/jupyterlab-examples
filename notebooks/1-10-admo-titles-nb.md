@@ -26,26 +26,20 @@ each time we try the same admonition with backticks, and then with colons
 
 +++
 
-::::{admonition} the title has `some code`
+````{myst}
+:::{admonition} the title has `some code`
+with ***colons instead of backticks*** - this works well in both jlab and jbook
+:::
+````
 
-with colons instead of backticks - this works well in jlab, but not in jbook
-
-::::
-
-+++
-
-***
-***
-
-+++
-
-`````bash
+`````{admonition} but don't use backticks !
+:class: danger
 the code below breaks it very hard, I keep for next time I want to try it, but for now it is too disruptive
 
-````{admonition} the title has `some code`
-
+````{myst}
+```{admonition} the title has `some code`
 and the admonition is made with backticks - not working in jlab, and not in jbook either
-
+```
 ````
 `````
 
@@ -60,25 +54,19 @@ and the admonition is made with backticks - not working in jlab, and not in jboo
 
 +++
 
-::::{admonition} the title has *italics*
-
+````{myst}
+:::{admonition} the title has *italics*
 with colons instead of backticks - and same result: this works well in jlab, but not in jbook
+:::
+````
 
-::::
-
-+++
-
-***
-***
-
-+++
-
+`````{admonition} again: but don't use backticks !
+:class: danger
 likewise
 
-`````bash
-````{admonition} the title has *italics*`
-
+```{myst}
+```{admonition} the title has *italics*`
 and the admonition is made with backticks - not working in jlab, and not in jbook either
-
+```
 ````
 `````

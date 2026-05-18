@@ -29,6 +29,7 @@ more details here <https://mystmd.org/guide/code>
 
 +++
 
+````{myst}
 ```{code-block}
 :linenos:
 
@@ -40,6 +41,7 @@ five
 six
 seven
 ```
+````
 
 +++
 
@@ -49,6 +51,7 @@ seven
 
 +++
 
+````{myst}
 ```{code-block}
 :linenos:
 :emphasize-lines: 2, 4,5,6
@@ -61,6 +64,7 @@ five
 six
 seven
 ```
+````
 
 +++
 
@@ -68,6 +72,7 @@ seven
 
 +++
 
+````{myst}
 ```{code-block}
 :filename: my-numbers.txt
 
@@ -79,6 +84,7 @@ five
 six
 seven
 ```
+````
 
 +++
 
@@ -91,7 +97,7 @@ to show stuff - possible an extract - from a local file
 
 ### plain inclusion of separate file in the repo
 
-apparently this is **hopeless with jlab**; works fine in jb2 though..
+the `myst` directive does not work with `literalinclude`..
 
 ```{literalinclude} Makefile
 ```
@@ -100,7 +106,15 @@ apparently this is **hopeless with jlab**; works fine in jb2 though..
 
 ### partial
 
-same between `style` (inclusive) and `wildcard` (exclusive)
+same between `style` (inclusive) and `wildcard` (exclusive), with these options
+added to the `literalinclude` directive
+
+```markdown
+:start-at: style
+:end-before: wildcard
+```
+
+this yields
 
 ```{literalinclude} Makefile
 :start-at: style
@@ -110,7 +124,7 @@ same between `style` (inclusive) and `wildcard` (exclusive)
 ```{list-table}
 :header-rows: 1
 
-* - directive
+* - option
   - how it works
 
 * - `start-at`
@@ -130,9 +144,16 @@ same between `style` (inclusive) and `wildcard` (exclusive)
 
 ### the file name
 
+with this option:
+
+```markdown
+:filename: my-fake-name
+```
+
+we get
+
 ```{literalinclude} Makefile
 :filename: my-fake-name
-
 ```
 
 +++
@@ -140,6 +161,7 @@ same between `style` (inclusive) and `wildcard` (exclusive)
 ### emphasis lines
 
 do not put spaces in the line list
+
 ```markdown
 :linenos: true
 :emphasize-lines: 2,4,6

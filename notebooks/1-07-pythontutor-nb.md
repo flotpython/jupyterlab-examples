@@ -19,6 +19,8 @@ language_info:
 
 ## ipythontutor
 
+when Python generates HTML code...
+
 ```{code-cell} ipython3
 %load_ext ipythontutor
 ```

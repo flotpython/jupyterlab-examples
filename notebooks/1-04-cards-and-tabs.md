@@ -22,12 +22,15 @@ from <https://mystmd.org/guide/dropdowns-cards-and-tabs>
 
 +++
 
+(label-grid-of-cards)=
+
 ## grid of cards
 
 ### texts, from the doc
 
 primarily to check that it works under jb1 too - **note** that the headers don't make it to jb1's output
 
+`````{myst}
 ````{grid} 1 1 2 3
 
 ```{card}
@@ -45,6 +48,7 @@ Write MyST Markdown to create enriched documents with publication-quality featur
 Execute notebook cells, store results, and insert outputs across pages.
 ```
 ````
+`````
 
 +++
 
@@ -96,8 +100,9 @@ Execute notebook cells, store results, and insert outputs across pages.
 
 ## tabs
 
-### almosas-is from the doc
+### almost as-is from the doc
 
+``````{myst}
 `````{tab-set}
 ````{tab-item} Tab 1
 :sync: tab1
@@ -112,6 +117,7 @@ Tab one
 Tab two
 ````
 `````
+``````
 
 +++
 
@@ -183,7 +189,8 @@ the text
 
 ### synced tabs
 
-using the `sync` names here to check for synchronized selection
+synchronized selection:
+each `tab-item` has a `:sync:` option, and items with the same value will be synchronized
 
 ``````{tab-set}
 `````{tab-item} Windows
