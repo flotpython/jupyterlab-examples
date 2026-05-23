@@ -56,6 +56,7 @@ PROJECT_PATTERNS = [
     "ue22-p25-backend",
     # "flotpython-course",
     "jupyterlab-examples",
+    "ue12-p26-rust",
 ]
 
 COMMONS = [
@@ -308,7 +309,7 @@ class Common:
             file0 = self.groups[keys[ref_index]][0]
             file1 = self.groups[keys[compare_index]][0]
             print(banner(f"diff {file0.short()} {file1.short()}"))
-            subprocess.run(f"diff {file0.path} {file1.path}", shell=True, check=True)
+            subprocess.run(f"diff {file0.path} {file1.path}", shell=True)
 
 
     def adopt(self, rank, dry_run, interactive):
