@@ -45,4 +45,4 @@ project:
         - pattern: 6-[0-9]*
     - title: slugs
       children:
-        - pattern: f1/*.md
+        - pattern: 7-slugs/*.md
