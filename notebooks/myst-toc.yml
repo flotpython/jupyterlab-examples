@@ -46,3 +46,6 @@ project:
     - title: slugs
       children:
         - pattern: 7-slugs/*.md
+    - title: MyST Workshop
+      children:
+        - pattern: 8-*.md
