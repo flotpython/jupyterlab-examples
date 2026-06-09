@@ -17,84 +17,70 @@ language_info:
 
 +++
 
-## the static files issue
+## the static files feature
 
-as of 2026 may, there is no provision to include static files in the mystmd output
-- not implicit like `_static` in jb1/sphinx
-- and not even explicit; one coud imagine something like a `static` definition in the frontmatter, but no
+as of 2026 june and myst 1.10, there is now a way to include static files in the mystmd output
 
-so most of the examples below are not working simply because we try to refer to local assets, but we can't...
+so we're going to use a static resource called `folium.html` that sits in the
+source repo in `_static/folium.html` and that is declared as a static file in
+`myst.yml`:
 
-so in order to focus on the matter at hand (how to render iframes) independently
-of the static files issue, we'll use a remote url for the examples below
+```yaml
+project:
+  static_files:
+    - _static
+```
 
-+++
+With this setting:
 
-## tl - dr
+- I can now refer to the html file in the notebook with a URL like `/_static/folium.html`
+- Note that the initial `/` is mandatory
+- Also as far as I can tell, the resource is **availble in a *static build***
+  (`myst build`) but not in a *dev build* (`myst start`)..
 
-- remote URLs are OK
-- for locally shipped htmls (e.g. folium-produced maps), as of 2025 march:
-  - jlab is mostly OK
-  - jb2: I can't find the URL to retrieve them - whether we put them in `_static` or in `media`...
+In the examples below we focus on rendering an iFrame, and we'll use this folium-generated content as the source
 
 +++
 
 ## raw HTML iframe: suboptimal !
 
-`````{admonition} do not use an html iframe tag
+`````{admonition} do not use an HTML iframe tag
 :class: error
 
-works in mystmd, but not in jlab at all apparently (sanitized most likely)  
-note the width/height things are not taken into account in mystmd
+- kind of works in mystmd (but ignores sizes)
+- but not in jlab at all (sanitized most likely)  
 
 ````{myst}
 <!-- DO NOT USE THIS -->
-<iframe src="https://jupyterlab-examples.info-mines.paris" width="200px" height="200px">
+<iframe src="/_static/folium.html" width="200px" height="200px">
 </iframe>
 ````
 `````
 
 +++
 
-## possible to use IPython's IFrame instead
+## use IPython's IFrame instead
+
+If you happen to use a Python kernel, this alternative seems to be the only way
+apparently to have control on both sizes; can't center it though ?
 
 ```{code-cell} ipython3
 from IPython.display import IFrame
 
-IFrame("https://jupyterlab-examples.info-mines.paris", "200px", "200px")
+IFrame("/_static/folium.html", "200px", "200px")
 ```
-
-````{admonition} with a local URL
-:class: warning dropdown
-
-```{code-cell} ipython3
-from IPython.display import IFrame
-
-IFrame("media/addresses-final.html", "200px", "200px")
-```
-````
 
 +++
 
 ## mystmd iframe
 
-cannot set height - and width either apparently...
+likewise, no control on sizes in mystmd:
+- cannot set height (print error message) 
+- and width is accepted but not honored apparently...
 
 ````{myst}
-```{iframe} https://jupyterlab-examples.info-mines.paris
+```{iframe} /_static/folium.html
 :width: 200px
-:height: 200px
-:align: center
-```
-````
-
-````{admonition} with a local URL
-:class: warning dropdown
-
-````{myst}
-```{iframe} media/addresses-final.html
-:width: 200px
-:height: 200px
 :align: center
 ```
 ````
