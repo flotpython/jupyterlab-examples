@@ -84,17 +84,3 @@ likewise, no control on sizes in mystmd:
 :align: center
 ```
 ````
-
-+++
-
-## static paths
-
-````{myst}
-```{iframe} /specific.html
-```
-````
-
-````{myst}
-```{iframe} /static/with-folder.html
-```
-````

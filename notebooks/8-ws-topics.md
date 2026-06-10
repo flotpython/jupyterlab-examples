@@ -175,3 +175,20 @@ other tools, and whether there are any plans to improve it in the future
 ## devel experience
 
 please enlighten us about the plan to merge the CLI and the themes
+
+## publish exercises / maintain corrections
+
+this is a bit of a niche topic obviously, but as teachers we often want to
+publish exercises, and maintain the corrections privately
+
+I'm sure everyone has their own more or less patchy/convoluted way to do that..
+
+I can show what I do, which is to have
+
+- a hidden `.teacher` folder in the course repo (I know...)
+- a `nbprune` tool that strips the solutions from the notebooks and produces "student" versions of the notebooks, 
+- which are the ones that are actually published
+- the "teacher" version is also built but marked as `hidden` so that it doesn't appear in the toc
+- and a magic keystroke allows to switch from one to the other in case I need to show the solution in class
+
+has a lot of obvious caveats (obviously not watertight at all) but does the job for now

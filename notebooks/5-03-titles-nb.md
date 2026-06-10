@@ -17,6 +17,8 @@ language_info:
 
 it seems like notebook classic, with the toc extension enabled, would automatically add numbering to titles
 
+not sure how to do that with jb2
+
 +++
 
 ## subtitle A

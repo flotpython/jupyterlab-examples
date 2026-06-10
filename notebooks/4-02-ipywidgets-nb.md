@@ -13,11 +13,16 @@ language_info:
   pygments_lexer: ipython3
   nbconvert_exporter: python
 skip_execution: true
+short_title: "ipywidgets (again)"
 ---
 
 (label-ipywidgets)=
 
-# ipywidgets
+# ipywidgets - works at read-time
+
+so in this note book we do `skip_execution: true` and rely on jlite/thebe to
+execute the code in the browser, which then gives more power and enables widgets
+to work smoothly
 
 ```{code-cell} ipython3
 %pip install ipywidgets

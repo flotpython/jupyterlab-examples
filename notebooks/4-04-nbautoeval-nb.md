@@ -16,7 +16,9 @@ language_info:
 
 (label-nbautoeval-dynamic)=
 
-# nbautoeval in jlite !
+# nbautoeval still broken
+
+trying to rescuscitate using jlite - broken too; could probably work but what's the point if one cannot edit code cells...
 
 +++
 

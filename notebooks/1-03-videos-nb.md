@@ -81,18 +81,7 @@ here we're using the `figure` myst directive
 this works in mystmd/jb2 (only in autoplay), but not in jlab
 ```
 
-+++
-
-### local with `figure` - under `_static`
-
-same but we refer to the content as a static file  
-**main difference: the initial `/` in the URL**
-
-```{figure} /_static/under-static.mp4
-:width: 200px
-<!-- :height: 200px -->
-same but using a static file instead
-```
+this would also work on a `static` file, but there's no actual need to
 
 +++
 

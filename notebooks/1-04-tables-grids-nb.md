@@ -224,4 +224,13 @@ a cell with a small height
 
 ## pandas
 
-[see another notebook dedicated to pandas](#label-pandas-df) including using `itables` for interactive tables
+displaying a non interactive table is straightforward
+
+```{code-cell} ipython3
+import pandas as pd
+
+pd.read_csv("data/titanic.csv").head()
+```
+
+[see also another notebook dedicated to pandas](#label-pandas-df) including using `itables` for interactive tables  
+however that technique requires lite and read-time execution... 

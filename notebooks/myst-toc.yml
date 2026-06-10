@@ -8,10 +8,10 @@ project:
       # numbered: true
       children:
         - pattern: 1-[0-9]*
-    - title: graphics & widgets
+    - title: styles & spaces
       children:
         - pattern: 2-[0-9]*
-    - title: styles & spaces
+    - title: graphics & widgets
       children:
         - pattern: 3-[0-9]*
     - title: execution
@@ -22,19 +22,22 @@ project:
         - file: 5-01-toc-plain.md
           title: a title set in the toc
           weirdo: should trigger some error
-        - file: 5-02-dummy-prune-nb.md
-          title: using nbprune but this is not taken into account
+        - file: 5-02-title-nb.md
+        - file: 5-03-titles-nb.md
+        - file: 5-04-dummy-prune-nb.md
+          title: using nbprune
         # here's how to define the corrige files with the hidden flag
-        - file: .teacher/5-02-dummy-prune-corrige-nb.md
+        # a pattern: would work too
+        - file: .teacher/5-04-dummy-prune-corrige-nb.md
           hidden: true
         # getting rid of the umbrella
         - title: multi-part TP
           children:
-            - file: 5-03-part1-nb.md
-            - file: 5-03-part2-nb.md
+            - file: 5-05-part1-nb.md
+            - file: 5-05-part2-nb.md
         # just for the contents to be available to other notebooks
         # but should not appear in the toc
-        - file: 5-04-hidden-nb.md
+        - file: 5-06-hidden-nb.md
           hidden: true
         # urls not yet supported in mystmd
         # see https://github.com/jupyter-book/mystmd/issues/1445
