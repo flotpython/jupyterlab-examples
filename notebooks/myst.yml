@@ -29,11 +29,12 @@ project:
     - https://raw.githubusercontent.com/choldgraf/myst-lightbox/main/src/index.mjs
   static_files:
     - _static
-    # - _static/folium.html
+    - some/path/to/static
+    - some/path/to/specific.html
 
 site:
-  #template: book-theme
-  template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
+  template: book-theme
+  # template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
   # 0.17.0 :
   # template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
 
@@ -50,7 +51,9 @@ site:
     logo: media/flotpython-favicon.svg
     # very visible in the header
     logo_text: With jupyter.lite = true
-    style: "_static/style.css"
+    style:
+      - _static/style_jb2.css
+      - _static/style_local.css
     folders: true
 
 extends:

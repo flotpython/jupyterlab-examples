@@ -2,6 +2,12 @@
 authors:
 - name: Thomas Parmentier
 - name: Olivier Grisel
+# goes in the lhs toc
+short_title: the frontmatter
+title: title from frontmatter
+subtitle: subtitle from frontmatter
+subject: subject from frontmatter
+# does not seem to trigger
 jupyter:
   lite: false
 jupytext:
@@ -18,8 +24,6 @@ language_info:
   pygments_lexer: ipython3
   nbconvert_exporter: python
 ---
-
-# frontmatter
 
 +++
 

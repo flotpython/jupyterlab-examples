@@ -35,10 +35,7 @@ IFrame(
 
 ## ditto with `remove-input`
 
-the same with the input area hidden with 
-
-- the `jupyterlab-hidecell` extension
-- using the `remove-input` cell tag
+the same with the input area hidden using the `remove-input` cell tag
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -73,11 +70,14 @@ works in both jlab and jb2
 
 ### local with `figure` - under media/
 
-using the `figure` myst directive
+**somehow, the `myst` directive would result in a blank output...**  
+here we're using the `figure` myst directive  
+- here we can set a width; it's best to leave height undefined
+- not much control on the player though
 
 ```{figure} media/under-media.mp4
 :width: 200px
-:height: 200px
+<!-- :height: 1000px -->
 this works in mystmd/jb2 (only in autoplay), but not in jlab
 ```
 
@@ -85,12 +85,13 @@ this works in mystmd/jb2 (only in autoplay), but not in jlab
 
 ### local with `figure` - under `_static`
 
-using the `figure` myst directive again
+same but we refer to the content as a static file  
+**main difference: the initial `/` in the URL**
 
-```{figure} _static/under-static.mp4
+```{figure} /_static/under-static.mp4
 :width: 200px
-:height: 200px
-this works in mystmd/jb2 (only in autoplay), but not in jlab
+<!-- :height: 200px -->
+same but using a static file instead
 ```
 
 +++

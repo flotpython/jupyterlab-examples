@@ -61,13 +61,13 @@ note that one can also use a MyST role, and that now works in both jlab and myst
 {strike}`so that one can see text in strikethrough mode`
 ````
 
-:::::{note} for striking `a piece of text`
+:::::{note} for striking `a piece of code`
 
 we can use the following syntax;
 not quite sure about the `del` *vs* `strike` thing though
 
 ```{myst}
-{del}`` `a piece of text` ``
+{del}`` `a piece of code` ``
 ```
 :::::
 

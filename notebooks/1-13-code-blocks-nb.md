@@ -106,6 +106,8 @@ the `myst` directive does not work with `literalinclude`..
 
 ### partial
 
+**again here the `myst` directive does not work with `literalinclude`..**
+
 same between `style` (inclusive) and `wildcard` (exclusive), with these options
 added to the `literalinclude` directive
 
