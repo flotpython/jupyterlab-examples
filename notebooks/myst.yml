@@ -32,10 +32,12 @@ project:
     # - data
 
 site:
+  # OK
   # template: book-theme
-  template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
-  # 0.17.0 :
-  # template: https://github.com/myst-templates/book-theme/archive/de4c1e9c09c6cd12fc529c1f22e8abf8e7f35381.zip
+  # OK
+  template: https://github.com/jupyter-book/myst-theme/releases/download/myst-to-react%401.3.1/book-theme.zip
+  # KO
+  # template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
 
   # used in the tab name
   title: jlab examples jlite

@@ -1,17 +1,18 @@
 ---
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
-language_info:
-  name: python
-  nbconvert_exporter: python
-  pygments_lexer: ipython3
+jupyter:
+  jupytext:
+    formats: ipynb,md
+    text_representation:
+      extension: .md
+      format_name: markdown
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+  language_info:
+    name: python
+    nbconvert_exporter: python
+    pygments_lexer: ipython3
 ---
 
 # code in admonition title
@@ -20,11 +21,9 @@ it seems that not all markdown construction play well when put in an admonition 
 
 each time we try the same admonition with backticks, and then with colons
 
-+++
 
 ## code in the title
 
-+++
 
 ````{myst}
 :::{admonition} the title has `some code`
@@ -43,16 +42,13 @@ and the admonition is made with backticks - not working in jlab, and not in jboo
 ````
 `````
 
-+++
 
 ***
 ***
 
-+++
 
 ## italics in the title
 
-+++
 
 ````{myst}
 :::{admonition} the title has *italics*

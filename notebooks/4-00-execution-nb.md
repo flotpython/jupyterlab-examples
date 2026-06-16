@@ -21,10 +21,10 @@ this series of notebooks is for playing with execution modes in jupyter book
 2 possible sets of options:
 
 - run `myst` with or without `--execute`  
-  when present, this runs the notebook at build-time  
+  when present, this runs the notebook at **build-time**  
   apparently this applies to all notebooks though
 - enable an embedded JupyterLite kernel, which then allows to run the notebook
-  in the browser, at read-time
+  in the browser, at **read-time**
 
 pros and cons:
 
