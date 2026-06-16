@@ -65,3 +65,11 @@ in `myst.yml`, add
 ```
 
 that is to say `project.jupyter.lite = true`
+
+### disable build-time execution for some notebooks
+
+in each individual frontmatter, add
+
+```yaml
+skip_execution: true
+```

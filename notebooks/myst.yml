@@ -27,6 +27,8 @@ project:
     lite: true
   plugins:
     - https://raw.githubusercontent.com/choldgraf/myst-lightbox/main/src/index.mjs
+    - manim.mjs
+
   static_files:
     - _static
     # - data
