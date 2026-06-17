@@ -12,6 +12,7 @@ language_info:
   name: python
   pygments_lexer: ipython3
   nbconvert_exporter: python
+skip_execution: true
 ---
 
 (label-nbautoeval-dynamic)=
@@ -34,12 +35,17 @@ could deposit the exercise code under e.g. `_static/exo_pgcd.py`
 but that's not something that is currently possible with myst I'm afraid
 
 ```{code-cell} ipython3
+%pip install requests
+import requests
+```
+
+```{code-cell} ipython3
 # this code seems OK, it computes the current window's location
 # and messes with it to come up with the URL for e.g. an exercice .py code
 # assuming it is stored in _static
 # and assuming also that myst lets us expose the contents of _static
 
-import js, asyncio, io, os
+import asyncio, io, os
 
 async def fetch_static_to_file(filename):
     # Try several JS expressions that *may* give the page URL
@@ -61,7 +67,7 @@ async def fetch_static_to_file(filename):
         url = f"_static/{filename}"
 
     print("Fetching:", url)
-    resp = await js.fetch(url)
+    resp = requests.get(url)
     if not resp.ok:
         raise RuntimeError(f"fetch failed with status {resp.status} for {url}")
     text = await resp.text()
