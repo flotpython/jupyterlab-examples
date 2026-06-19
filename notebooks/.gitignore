@@ -1,3 +1,5 @@
 .vercel
 .jupytext-sync-ipynb/
 .teacher/graphdict.txt
+downloaded-*
+exec-sandbox
