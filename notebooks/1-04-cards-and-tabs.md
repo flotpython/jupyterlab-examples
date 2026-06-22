@@ -24,6 +24,8 @@ from <https://mystmd.org/guide/dropdowns-cards-and-tabs>
 
 (label-grid-of-cards)=
 
+
+
 ## grid of cards
 
 ### texts, from the doc
@@ -54,6 +56,7 @@ Execute notebook cells, store results, and insert outputs across pages.
 
 ### 2 images, no size specified
 
+``````{myst}
 `````{grid} 1 1 2 2
 
 ````{card}
@@ -68,6 +71,7 @@ Execute notebook cells, store results, and insert outputs across pages.
 ````
 
 `````
+``````
 
 +++
 

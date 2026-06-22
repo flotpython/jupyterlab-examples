@@ -56,3 +56,36 @@ and check how that renders in the following contexts
 ## status
 
 not always up to date, particularly in the areas where things no longer evolve much  
+
++++
+
+## note on using the `myst` directive
+
+on paper the `myst` directive would be ideal for our purpose: it shows the code, and how it renders;
+
+````{myst}
+```{admonition} you would get this
+:class: dropdown danger
+the body af an admonition
+```
+````
+
+however we can't always use it, because it breaks some features
+
+because e.g. images won't make it in the output (go figure..); or when playing with nested code cells obviously
+
+````{myst}
+```{image} media/board-8x8.png
+:width: 200px
+```
+````
+
+we'll show this in the margin when it's the case that we've decided not to use `myst`
+
+:::{sidebar} can't use ```{myst}
+breaks images
+:::
+
+```{image} media/board-8x8.png
+:width: 200px
+```

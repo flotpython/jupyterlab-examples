@@ -113,3 +113,7 @@ import os
 admitting that the `USER` environment variable is set, we can also insert its value:
 
 ### in a title we get the user id as {eval}`os.environ['USER']`
+
+````{sidebar} can't use ```{myst}
+this would end up badly
+````

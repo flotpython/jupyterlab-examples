@@ -21,7 +21,11 @@ short_title: images
 10 * 30
 ```
 
-several variations on inserting an image
+and then several variations on inserting an image
+
+:::{sidebar} can't use ```{myst}
+breaks images
+:::
 
 +++
 
