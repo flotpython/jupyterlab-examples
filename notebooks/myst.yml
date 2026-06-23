@@ -38,9 +38,7 @@ site:
   # template: book-theme
   # OK
   # template: https://github.com/jupyter-book/myst-theme/releases/download/myst-to-react%401.3.1/book-theme.zip
-  # KO
-  # template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
-  template: https://github.com/flotpython/myst-theme/releases/download/new-custom/book-theme.zip
+  template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
 
   # used in the tab name
   title: jlab examples jlite
