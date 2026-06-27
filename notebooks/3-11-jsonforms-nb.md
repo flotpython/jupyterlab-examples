@@ -1,0 +1,278 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  name: python3
+  display_name: Python 3 (ipykernel)
+  language: python
+language_info:
+  name: python
+  pygments_lexer: ipython3
+  nbconvert_exporter: python
+---
+
+# jsonforms
+
+## simple with JSON
+
+```{jsonform}
+{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "title": "Your name" },
+    "age":  { "type": "integer", "title": "Age" }
+  }
+}
+```
+
+## same with YAML
+
+```{jsonform}
+type: object
+properties:
+  name:
+    type: string
+    title: Your name
+  age:
+    type: integer
+    title: Age
+```
+
+## strings, formats and descriptions
+
+`format` switches the input widget; `description` shows helper text under the field.
+
+```{jsonform}
+type: object
+properties:
+  fullName:
+    type: string
+    title: Full name
+    description: As it appears on your ID
+  email:
+    type: string
+    title: Email
+    format: email
+  website:
+    type: string
+    title: Website
+    format: uri
+```
+
+## numbers with constraints
+
+`integer` vs `number`, plus `minimum` / `maximum` bounds (used for validation).
+
+```{jsonform}
+type: object
+properties:
+  quantity:
+    type: integer
+    title: Quantity
+    minimum: 1
+    maximum: 10
+  price:
+    type: number
+    title: Unit price
+    minimum: 0
+```
+
+## booleans
+
+`boolean` renders as a checkbox.
+
+```{jsonform}
+type: object
+properties:
+  subscribe:
+    type: boolean
+    title: Subscribe to the newsletter
+  acceptTerms:
+    type: boolean
+    title: I accept the terms and conditions
+```
+
+## dates and times
+
+Driven by the `format` keyword on a `string`.
+
+```{jsonform}
+type: object
+properties:
+  birthday:
+    type: string
+    title: Date of birth
+    format: date
+  appointment:
+    type: string
+    title: Appointment
+    format: date-time
+  reminder:
+    type: string
+    title: Reminder time
+    format: time
+```
+
+## single choice (dropdown)
+
+An `enum` on a `string` renders as a select.
+
+```{jsonform}
+type: object
+properties:
+  color:
+    type: string
+    title: Favorite color
+    enum:
+      - red
+      - green
+      - blue
+      - other
+```
+
+## multiple choice (checkboxes)
+
+An `array` of `enum` values with `uniqueItems` renders as a set of checkboxes.
+
+```{jsonform}
+type: object
+properties:
+  toppings:
+    type: array
+    title: Pizza toppings
+    uniqueItems: true
+    items:
+      type: string
+      enum:
+        - cheese
+        - mushrooms
+        - olives
+        - pepperoni
+        - onions
+```
+
+## required fields and validation
+
+Fields listed in `required` must be filled; constraints like `minLength` and
+`pattern` are validated live, and the Submit button stays disabled until the
+form is valid.
+
+```{jsonform}
+type: object
+required:
+  - username
+  - age
+properties:
+  username:
+    type: string
+    title: Username
+    minLength: 3
+    description: At least 3 characters
+  age:
+    type: integer
+    title: Age
+    minimum: 18
+    description: Must be 18 or older
+  zip:
+    type: string
+    title: ZIP code
+    pattern: "^[0-9]{5}$"
+    description: Five digits
+```
+
+## a list of items
+
+An `array` of `object` produces an add/remove list of sub-forms.
+
+```{jsonform}
+type: object
+properties:
+  contacts:
+    type: array
+    title: Contacts
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          title: Name
+        phone:
+          type: string
+          title: Phone
+```
+
+## custom UI Schema
+
+So far the body has been a bare JSON Schema, and JSONForms auto-generates the
+layout (every field stacked vertically). To control the layout, provide a
+**UI Schema** alongside the schema, using the `Schema:` / `UISchema:` / `Data:`
+form. The simplest case where it makes a visible difference: placing two fields
+side by side with a `HorizontalLayout`.
+
+```{jsonform}
+Schema:
+  type: object
+  properties:
+    firstName:
+      type: string
+      title: First name
+    lastName:
+      type: string
+      title: Last name
+UISchema:
+  type: HorizontalLayout
+  elements:
+    - type: Control
+      scope: "#/properties/firstName"
+    - type: Control
+      scope: "#/properties/lastName"
+```
+
+## nested objects
+
+Nested `object` properties are **not** expanded by the auto-generated layout —
+with a schema only, the nested fields simply don't show up. Supplying a UI Schema
+that points at the nested scopes makes them render — here grouped in a box with
+`Group`, and pre-filled via `Data:`.
+
+```{jsonform}
+Schema:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+    address:
+      type: object
+      properties:
+        street:
+          type: string
+          title: Street
+        city:
+          type: string
+          title: City
+        country:
+          type: string
+          title: Country
+          enum: [France, Germany, Spain, Other]
+UISchema:
+  type: VerticalLayout
+  elements:
+    - type: Control
+      scope: "#/properties/name"
+    - type: Group
+      label: Address
+      elements:
+        - type: Control
+          scope: "#/properties/address/properties/street"
+        - type: Control
+          scope: "#/properties/address/properties/city"
+        - type: Control
+          scope: "#/properties/address/properties/country"
+Data:
+  address:
+    country: France
+```
