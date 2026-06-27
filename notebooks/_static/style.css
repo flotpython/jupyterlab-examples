@@ -329,3 +329,14 @@ div.myst {
    border: solid  rgb(7, 78, 52);
 
 }
+
+/*
+ * Override jsonform theming variables, site-wide.
+ * These custom properties are inherited across the shadow-DOM boundary into
+ * every {jsonform} on the site (green accent, rounder corners).
+ */
+:root {
+   --jsonform-accent: #2e7d32;
+   --jsonform-accent-hover: #1b5e20;
+   --jsonform-radius: 10px;
+}
