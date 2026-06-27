@@ -52,3 +52,8 @@ project:
     - title: MyST Workshop
       children:
         - pattern: 8-*.md
+    - title: Issue 2973
+      children:
+        - file: 2973/file1.md
+        - file: 2973/file2.md
+        - pattern: 2973/*.md
