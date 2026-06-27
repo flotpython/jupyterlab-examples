@@ -276,3 +276,71 @@ Data:
   address:
     country: France
 ```
+
+# styling
+
+## theme variables (site-wide)
+
+The form's look is exposed through CSS custom properties (`--jsonform-accent`,
+`--jsonform-radius`, `--jsonform-border`, ...). Because inherited properties
+cross the shadow-DOM boundary, a site can override them with ordinary CSS. Here
+`_static/style_local.css` (loaded from `myst.yml`) sets a green accent and
+rounder corners — which applies to **every** form on this page (notice all the
+Submit buttons are green). No per-directive option is needed.
+
+```{jsonform}
+type: object
+properties:
+  name:
+    type: string
+    title: Name
+  role:
+    type: string
+    title: Role
+    enum: [student, teacher]
+```
+
+## inline CSS
+
+The `Style:` chunk can carry verbatim CSS rules, injected into this form only
+(after the base stylesheet, so they win). Here: thick red borders and red
+labels.
+
+```{jsonform}
+Schema:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+    role:
+      type: string
+      title: Role
+      enum: [student, teacher]
+Style: |
+  .control input,
+  .control select {
+    border: 3px solid #c0392b;
+  }
+  .control > label { color: #c0392b; }
+```
+
+## external CSS file
+
+A `Style:` value that is a path or URL ending in `.css` is treated as a
+reference: mystmd stages the file and links it inside this form's shadow root.
+Here `_static/style_forms.css` (purple, dashed borders, small-caps labels).
+
+```{jsonform}
+Schema:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+    role:
+      type: string
+      title: Role
+      enum: [student, teacher]
+Style: _static/style_forms.css
+```

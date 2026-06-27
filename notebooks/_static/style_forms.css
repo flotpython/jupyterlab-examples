@@ -1,0 +1,21 @@
+/*
+ * Stylesheet referenced by a {jsonform} directive via:
+ *   Style: _static/style_forms.css
+ * It is staged by mystmd and linked inside the widget's shadow root.
+ */
+.control > label {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: #6a1b9a;
+}
+
+.control input,
+.control select,
+.control textarea {
+  border: 2px dashed #9c27b0;
+  background: #faf5ff;
+}
+
+.myst-jsonform-submit {
+  background: #6a1b9a;
+}
