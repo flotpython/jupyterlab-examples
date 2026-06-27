@@ -14,8 +14,6 @@ language_info:
   nbconvert_exporter: python
 ---
 
-+++ {"slideshow": {"slide_type": ""}, "tags": []}
-
 # x-refs 
 
 playing with labeled cells, embed, figure ...
@@ -136,11 +134,8 @@ import folium
 we put a label `the-labeled-map` on the following code cell
 
 ```{code-cell} ipython3
----
-slideshow:
-  slide_type: ''
-tags: []
----
+:tags: []
+
 #| label: the-labeled-map
 
 CENTER = 48.856542, 2.347614

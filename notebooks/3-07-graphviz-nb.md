@@ -17,11 +17,6 @@ language_info:
 # graphviz
 
 ```{code-cell} ipython3
----
-slideshow:
-  slide_type: ''
-tags: []
----
 import graphviz
 ```
 
