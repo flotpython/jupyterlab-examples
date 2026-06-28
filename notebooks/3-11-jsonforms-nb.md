@@ -344,3 +344,72 @@ Schema:
       enum: [student, teacher]
 Style: _static/style_forms.css
 ```
+
+# a survey, in one form
+
+A single `{jsonform}` can mimic a multi-section Google Form. The `UISchema`
+arranges fields into titled `Group` sections, with a `HorizontalLayout` for the
+name/email row and `options: {multi: true}` for the multi-line comment. The three
+language picks share one list of 12 options via a `definitions` entry referenced
+with `$ref` (so the list is written once). Choosing the same language twice is
+*not* prevented — JSON Schema can't express that across separate fields.
+
+```{jsonform}
+Schema:
+  type: object
+  definitions:
+    language:
+      type: string
+      enum:
+        - Python
+        - JavaScript
+        - TypeScript
+        - Rust
+        - Go
+        - C
+        - C++
+        - Java
+        - Julia
+        - R
+        - Haskell
+        - Ruby
+  properties:
+    name: {type: string}
+    email:
+      type: string
+      format: email
+      pattern: '^[^@\s]+@etu\.minesparis\.psl\.eu$'
+      description: Must end in @etu.minesparis.psl.eu
+      errorMessage: Please use your @etu.minesparis.psl.eu address
+    choice1: {$ref: "#/definitions/language"}
+    choice2: {$ref: "#/definitions/language"}
+    choice3: {$ref: "#/definitions/language"}
+    comment: {type: string}
+  required: [name, email, choice1, choice2, choice3]
+UISchema:
+  type: VerticalLayout
+  elements:
+    - type: Group
+      label: About you
+      elements:
+        - type: HorizontalLayout
+          elements:
+            - {type: Control, scope: "#/properties/name", label: Name}
+            - {type: Control, scope: "#/properties/email", label: Email}
+    - type: Group
+      label: Your top three languages
+      elements:
+        - {type: Control, scope: "#/properties/choice1", label: First choice}
+        - {type: Control, scope: "#/properties/choice2", label: Second choice}
+        - {type: Control, scope: "#/properties/choice3", label: Third choice}
+    - type: Group
+      label: Anything else?
+      elements:
+        - type: Control
+          scope: "#/properties/comment"
+          label: Comments
+          options:
+            multi: true
+Data:
+  email: "@etu.minesparis.psl.eu"
+```
