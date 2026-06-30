@@ -29,7 +29,7 @@ project:
     - https://raw.githubusercontent.com/choldgraf/myst-lightbox/main/src/index.mjs
     - manim.mjs
     # - /Users/tparment/git/myst-jsonform/src/jsonform.mjs
-    - https://cdn.jsdelivr.net/gh/flotpython/myst-jsonform@main/dist/jsonform.mjs
+    - https://cdn.jsdelivr.net/gh/myst-contrib/myst-jsonform@main/dist/jsonform.mjs
 
   static_files:
     - _static
