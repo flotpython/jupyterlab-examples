@@ -419,4 +419,32 @@ Submit:
     method: POST
 ```
 
+# events
+
+The `event` submit type emits DOM `CustomEvent`s: `submit_event` when the form
+is submitted, and `change_event` on every change. They bubble out of the shadow
+root to `window`, so you can listen globally. Paste this in the browser console,
+then interact with the form below:
+
+```js
+window.addEventListener('ongoing', (e) => console.log('change', e.detail));
+window.addEventListener('done', (e) => console.log('submit', e.detail));
+```
+
+```{jsonform}
+Schema:
+  type: object
+  properties:
+    name: {type: string, title: Name}
+    mood:
+      type: string
+      title: Mood
+      enum: [happy, neutral, grumpy]
+  required: [name]
+Submit:
+  - type: print
+  - type: event
+    name: mood-form
+    submit_event: done
+    change_event: ongoing
 ```
