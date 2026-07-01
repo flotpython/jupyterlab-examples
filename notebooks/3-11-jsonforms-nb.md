@@ -412,4 +412,11 @@ UISchema:
             multi: true
 Data:
   email: "@etu.minesparis.psl.eu"
+Submit:
+  - type: print
+  - type: webapi
+    url: https://httpbin.org/post
+    method: POST
+```
+
 ```
