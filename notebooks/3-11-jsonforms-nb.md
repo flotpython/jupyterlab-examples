@@ -414,12 +414,32 @@ Data:
   email: "@etu.minesparis.psl.eu"
 Submit:
   - type: print
-  - type: webapi
-    url: https://httpbin.org/post
-    method: POST
 ```
 
-# events
+# submit types
+
+## webapi submit
+
+This will send submissions to a crafted endpoint on formspree.com
+
+```{jsonform}
+Schema:
+  type: object
+  properties:
+    name: {type: string, title: Name}
+    email: {type: string, title: Email, format: email}
+  required: [name]
+Submit:
+  - type: webapi
+    url: https://formspree.io/f/mjgqarab
+    method: POST
+    json: true
+    headers:
+      Accept: application/json
+```
+
+
+## event submit
 
 The `event` submit type emits DOM `CustomEvent`s: `submit_event` when the form
 is submitted, and `change_event` on every change. They bubble out of the shadow
