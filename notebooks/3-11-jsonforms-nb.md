@@ -438,6 +438,9 @@ Submit:
       Accept: application/json
 ```
 
+results can be seen here (requires admin rights):
+<https://formspree.io/forms/mjgqarab/submissions>
+
 
 ## event submit
 
