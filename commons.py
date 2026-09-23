@@ -172,7 +172,7 @@ class File:
         dir_ = self.path.parents[0]
         # name = self.path.name
         command = f"git -C {dir_} merge-base --is-ancestor HEAD @{{upstream}}"
-        return subprocess.run(command, shell=True, check=True) == 0
+        return subprocess.run(command, shell=True) == 0
 
     # fine-grained: check for pending changes in any of the 2 areas (added or not)
     def has_pending_changes(self, area):
@@ -188,7 +188,7 @@ class File:
             command = f"git -C {dir_} diff-index --quiet HEAD {name}"
         elif area == 'worktree':
             command = f"git -C {dir_} diff-files --quiet -- {name}"
-        return subprocess.run(command, shell=True, check=True) == 0
+        return subprocess.run(command, shell=True) == 0
 
 
 class Common:
