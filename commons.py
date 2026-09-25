@@ -19,6 +19,11 @@ from colorama import Fore, Style
 # my first time with click
 import click
 
+DEFAULT_EXCLUDES = ["node_modules/"]
+# populated by commons_cli() from the -x/--exclude option(s); always
+# includes DEFAULT_EXCLUDES, -x only adds to it, never replaces it
+EXCLUDES = DEFAULT_EXCLUDES
+
 colorama.init(strip=False)
 
 def wrap(message, fore_color):
@@ -37,13 +42,15 @@ def banner(file, color=yellow, n=10):
     )
 
 @click.group()
-# @click.option('--debug/--no-debug', default=False)
-def commons_cli():
+@click.option('-x', '--exclude', multiple=True,
+              help=f"path fragment to exclude, in addition to the defaults {DEFAULT_EXCLUDES}; "
+                   "can be repeated")
+def commons_cli(exclude):
     """
     checks for common files in multiple repos
     """
-    # click.echo(f"Debug mode is {'on' if debug else 'off'}")
-    # pass
+    global EXCLUDES
+    EXCLUDES = DEFAULT_EXCLUDES + list(exclude)
 
 PROJECT_PATTERNS = [
     "ue12-p26-intro",
@@ -207,6 +214,14 @@ class Common:
                 x for project in PROJECTS
                 for x in project.glob(f"{'*/'*depth}{self.common}")
             ]
+        # ignore folders
+        paths = [path for path in paths if path.is_file()]
+        # ignore excluded
+        def is_excluded(path):
+            for exclude in EXCLUDES:
+                if exclude in str(path):
+                    return True
+        paths = [path for path in paths if not is_excluded(path)]
         files = []
 
         for path in paths:
@@ -274,8 +289,8 @@ class Common:
         color = Fore.GREEN if self.is_ok() else Fore.RED
 
         print(yellow(f"{self.common} has {self.nb_files()} instances in {self.nb_groups()} groups"))
-        for group, files in self.groups.items():
-            print(f"Group {group}")
+        for index, (group, files) in enumerate(self.groups.items(), 1):
+            print(f"Group #{index} {group}")
             for file in files:
                 red = file.has_pending_changes('worktree')
                 green = file.has_pending_changes('index')
