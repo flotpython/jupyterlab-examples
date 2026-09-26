@@ -40,6 +40,7 @@ site:
   # template: book-theme
   # OK
   # template: https://github.com/jupyter-book/myst-theme/releases/download/myst-to-react%401.3.1/book-theme.zip
+  # OK - our own brew
   template: https://github.com/flotpython/myst-theme/releases/download/custom/book-theme.zip
 
   # used in the tab name
@@ -60,6 +61,8 @@ site:
     #   - _static/style_jb2.css
     #   - _static/style_local.css
     folders: true
+    # show toplinks - for testing the poc mostly
+    hide_header_links: false
 
 extends:
   - myst-toc.yml
