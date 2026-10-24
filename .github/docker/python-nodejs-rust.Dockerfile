@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
     PATH=/usr/local/cargo/bin:$PATH \
-    RUST_VERSION=1.95.0
+    RUST_VERSION=1.99.1
 
 # --- System deps ---
 # build-essential + pkg-config + libssl-dev: needed to build evcxr
